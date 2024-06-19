@@ -37,13 +37,11 @@ const Navbar = () => {
       bgColor={'white'}
       maxW={'100%'}
       w={'full'}
-      position={'sticky'}
+      position={'fixed'}
       top={0}
       zIndex={1000}
     >
       <Container
-        position={'sticky'}
-        top={0}
         bgColor={'white'}
         zIndex={1}
         maxW={'container.xl'}
