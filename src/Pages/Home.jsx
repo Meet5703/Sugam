@@ -377,8 +377,8 @@ const Home = () => {
   };
 
   return (
-    <>
-      <Container color={'rgb(246,246,246)'} maxW={'100%'} paddingX={0}>
+    <Container maxW={'100%'} paddingX={0} overflowX={'hidden'}>
+      <Container mt={20} color={'rgb(246,246,246)'} maxW={'100%'} paddingX={0}>
         <Carousel
           showThumbs={false}
           infiniteLoop
@@ -991,7 +991,7 @@ const Home = () => {
             <Box key={index} position={'relative'} top={'10'}>
               <Grid
                 templateRows={['repeat(3, 1fr)']}
-                templateColumns={['repeat(3, 1fr)']}
+                templateColumns={['1fr', 'repeat(3, 1fr)']}
                 gap={6}
                 padding={4}
               >
@@ -1037,7 +1037,7 @@ const Home = () => {
           ))}
         </Carousel>
       </Box>
-    </>
+    </Container>
   );
 };
 
