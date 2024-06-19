@@ -378,7 +378,12 @@ const Home = () => {
 
   return (
     <Container maxW={'100%'} paddingX={0} overflowX={'hidden'}>
-      <Container mt={20} color={'rgb(246,246,246)'} maxW={'100%'} paddingX={0}>
+      <Container
+        mt={[20, 20, 0, 0, 0]}
+        color={'rgb(246,246,246)'}
+        maxW={'100%'}
+        paddingX={0}
+      >
         <Carousel
           showThumbs={false}
           infiniteLoop
