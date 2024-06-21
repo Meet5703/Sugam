@@ -444,6 +444,7 @@ const Home = () => {
           ))}
         </Carousel>
       </Container>
+
       <ProductCarousel
         productChunks={productChunks}
         onInquireNow={handleInquireNow}
@@ -552,7 +553,18 @@ const Home = () => {
           </GridItem>
         </Grid>
       </Container>
-
+      {/* <Heading
+        children="Featured Products"
+        mb={12}
+        color="blue.400"
+        position="absolute"
+        top="0%"
+        zIndex="1"
+        textAlign="left"
+        fontFamily="Oswald"
+        fontSize="4xl"
+        fontWeight={500}
+      /> */}
       <ProductCarousel
         productChunks={productChunks}
         onInquireNow={handleInquireNow}
@@ -841,6 +853,16 @@ const ProductCarousel = ({ productChunks, onInquireNow }) => {
 
   return (
     <Container maxW="container.xl" mx="auto" mt={16}>
+      <Heading
+        children="Latest Products"
+        mb={12}
+        color="blue.400"
+        zIndex="1"
+        textAlign="left"
+        fontFamily="Oswald"
+        fontSize="4xl"
+        fontWeight={500}
+      />
       <Carousel
         showThumbs={false}
         infiniteLoop
