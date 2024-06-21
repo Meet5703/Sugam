@@ -219,129 +219,129 @@ const Home = () => {
       link: '/product/8',
     },
     {
-      id: 1,
+      id: 9,
       price: 500,
-      title: 'Product 1',
+      title: 'Product 9',
       image:
         'https://bigon-7.myshopify.com/cdn/shop/products/DOEReplicaWheels_fda8d04c-c763-4ac9-87b7-6f12120372c0_95X106_crop_center.jpg?v=1643285091',
       link: '/product/1',
     },
     {
-      id: 2,
+      id: 10,
       price: 500,
-      title: 'Product 2',
+      title: 'Product 10',
       image:
         'https://bigon-7.myshopify.com/cdn/shop/products/DOEReplicaWheels_fda8d04c-c763-4ac9-87b7-6f12120372c0_95X106_crop_center.jpg?v=1643285091',
       link: '/product/2',
     },
     {
-      id: 3,
+      id: 11,
       price: 500,
-      title: 'Product 3',
+      title: 'Product 11',
       image:
         'https://bigon-7.myshopify.com/cdn/shop/products/DOEReplicaWheels_fda8d04c-c763-4ac9-87b7-6f12120372c0_95X106_crop_center.jpg?v=1643285091',
       link: '/product/3',
     },
     {
-      id: 4,
+      id: 12,
       price: 500,
-      title: 'Product 4',
+      title: 'Product 12',
       image:
         'https://bigon-7.myshopify.com/cdn/shop/products/DOEReplicaWheels_fda8d04c-c763-4ac9-87b7-6f12120372c0_95X106_crop_center.jpg?v=1643285091',
       link: '/product/4',
     },
     {
-      id: 5,
+      id: 13,
       price: 500,
-      title: 'Product 5',
+      title: 'Product 13',
       image:
         'https://bigon-7.myshopify.com/cdn/shop/products/DOEReplicaWheels_fda8d04c-c763-4ac9-87b7-6f12120372c0_95X106_crop_center.jpg?v=1643285091',
       link: '/product/5',
     },
     {
-      id: 6,
+      id: 14,
       price: 500,
-      title: 'Product 6',
+      title: 'Product 14',
       image:
         'https://bigon-7.myshopify.com/cdn/shop/products/DOEReplicaWheels_fda8d04c-c763-4ac9-87b7-6f12120372c0_95X106_crop_center.jpg?v=1643285091',
       link: '/product/6',
     },
     {
-      id: 7,
+      id: 15,
       price: 500,
-      title: 'Product 7',
+      title: 'Product 15',
       image:
         'https://bigon-7.myshopify.com/cdn/shop/products/DOEReplicaWheels_fda8d04c-c763-4ac9-87b7-6f12120372c0_95X106_crop_center.jpg?v=1643285091',
       link: '/product/7',
     },
     {
-      id: 8,
+      id: 16,
       price: 500,
-      title: 'Product 8',
+      title: 'Product 16',
       image:
         'https://bigon-7.myshopify.com/cdn/shop/products/DOEReplicaWheels_fda8d04c-c763-4ac9-87b7-6f12120372c0_95X106_crop_center.jpg?v=1643285091',
       link: '/product/8',
     },
     {
-      id: 1,
+      id: 17,
       price: 500,
-      title: 'Product 1',
+      title: 'Product 17',
       image:
         'https://bigon-7.myshopify.com/cdn/shop/products/DOEReplicaWheels_fda8d04c-c763-4ac9-87b7-6f12120372c0_95X106_crop_center.jpg?v=1643285091',
       link: '/product/1',
     },
     {
-      id: 2,
+      id: 18,
       price: 500,
-      title: 'Product 2',
+      title: 'Product 18',
       image:
         'https://bigon-7.myshopify.com/cdn/shop/products/DOEReplicaWheels_fda8d04c-c763-4ac9-87b7-6f12120372c0_95X106_crop_center.jpg?v=1643285091',
       link: '/product/2',
     },
     {
-      id: 3,
+      id: 19,
       price: 500,
-      title: 'Product 3',
+      title: 'Product 19',
       image:
         'https://bigon-7.myshopify.com/cdn/shop/products/DOEReplicaWheels_fda8d04c-c763-4ac9-87b7-6f12120372c0_95X106_crop_center.jpg?v=1643285091',
       link: '/product/3',
     },
     {
-      id: 4,
+      id: 20,
       price: 500,
-      title: 'Product 4',
+      title: 'Product 20',
       image:
         'https://bigon-7.myshopify.com/cdn/shop/products/DOEReplicaWheels_fda8d04c-c763-4ac9-87b7-6f12120372c0_95X106_crop_center.jpg?v=1643285091',
       link: '/product/4',
     },
     {
-      id: 5,
+      id: 21,
       price: 500,
-      title: 'Product 5',
+      title: 'Product 21',
       image:
         'https://bigon-7.myshopify.com/cdn/shop/products/DOEReplicaWheels_fda8d04c-c763-4ac9-87b7-6f12120372c0_95X106_crop_center.jpg?v=1643285091',
       link: '/product/5',
     },
     {
-      id: 6,
+      id: 22,
       price: 500,
-      title: 'Product 6',
+      title: 'Product 22',
       image:
         'https://bigon-7.myshopify.com/cdn/shop/products/DOEReplicaWheels_fda8d04c-c763-4ac9-87b7-6f12120372c0_95X106_crop_center.jpg?v=1643285091',
       link: '/product/6',
     },
     {
-      id: 7,
+      id: 23,
       price: 500,
-      title: 'Product 7',
+      title: 'Product 23',
       image:
         'https://bigon-7.myshopify.com/cdn/shop/products/DOEReplicaWheels_fda8d04c-c763-4ac9-87b7-6f12120372c0_95X106_crop_center.jpg?v=1643285091',
       link: '/product/7',
     },
     {
-      id: 8,
+      id: 24,
       price: 500,
-      title: 'Product 8',
+      title: 'Product 24',
       image:
         'https://bigon-7.myshopify.com/cdn/shop/products/DOEReplicaWheels_fda8d04c-c763-4ac9-87b7-6f12120372c0_95X106_crop_center.jpg?v=1643285091',
       link: '/product/8',
@@ -444,136 +444,119 @@ const Home = () => {
           ))}
         </Carousel>
       </Container>
-      <Container maxW="container.xl" paddingX={0} mt={10}>
-        <HStack justifyContent="space-between" mb={4}>
-          <Heading
-            fontFamily={'Fira Sans Condensed'}
-            fontWeight={'600'}
-            color={'blue.400'}
-            fontSize={['2xl', '2xl', '3xl', '3xl', '4xl']}
-          >
-            Exclusive Products
-          </Heading>
+      <ProductCarousel
+        productChunks={productChunks}
+        onInquireNow={handleInquireNow}
+      />
+      {selectedProduct && (
+        <InquiryModal
+          isOpen={isOpen}
+          onClose={onClose}
+          product={selectedProduct}
+        />
+      )}
 
-          <Link to="/products">
-            <Button colorScheme="blue">View All</Button>
-          </Link>
-        </HStack>
-        <Carousel
-          showThumbs={false}
-          infiniteLoop
-          showStatus={false}
-          emulateTouch
-          onChange={index => setCurrentSlide(index)}
-          renderArrowPrev={(onClickHandler, hasPrev, label) =>
-            hasPrev && (
-              <Button
-                onClick={onClickHandler}
-                position="absolute"
-                top="50%"
-                left="0"
-                transform="translateY(-50%)"
-                zIndex="2"
-                bg="blue.400"
-                color="white"
-                _hover={{ bg: 'blue.500' }}
-                _active={{ bg: 'blue.600' }}
-                aria-label={label}
-              >
-                <RiArrowLeftSLine />
-              </Button>
-            )
-          }
-          renderArrowNext={(onClickHandler, hasNext, label) =>
-            hasNext && (
-              <Button
-                onClick={onClickHandler}
-                position="absolute"
-                top="50%"
-                right="0"
-                transform="translateY(-50%)"
-                zIndex="2"
-                bg="blue.400"
-                color="white"
-                _hover={{ bg: 'blue.500' }}
-                _active={{ bg: 'blue.600' }}
-                aria-label={label}
-              >
-                <RiArrowRightSLine />
-              </Button>
-            )
-          }
+      <Container maxW="container.xl" mt={10}>
+        <Grid
+          templateColumns={['1fr', '1fr', '1fr', 'repeat(2, 1fr)']}
+          gap={6}
+          w="100%"
+          maxW={['400px', '500px', '700px', '1000px', 'container.xl']}
+          mx="auto"
+          h={['90vh', '90vh', '90vh', '40vh', '40vh']}
         >
-          {productChunks.map((chunk, index) => (
-            <Grid
-              key={index}
-              templateColumns={[
-                'repeat(2, 1fr)',
-                'repeat(2, 1fr)',
-                'repeat(4, 1fr)',
-              ]}
-              gap={6}
-              padding={4}
+          <GridItem position="relative">
+            <Box
+              maxH={'100%'}
+              maxW={'100%'}
+              _hover={{ transform: 'scale(1.1)' }}
+              bgRepeat="no-repeat"
+              bgImage="url(https://bigon-7.myshopify.com/cdn/shop/files/banner-2-2_1024x1024.jpg?v=1643779637)"
+              bgSize="cover"
+              bgPosition="center"
+              h="100%"
+              borderRadius="lg"
+              overflow="hidden"
+              position="relative"
+              role="group"
+              transition="all 0.3s ease"
+            ></Box>
+            <Box
+              position="absolute"
+              transition="all 0.3s ease"
+              top="50%"
+              left="22.4%"
+              transform="translate(-50%, -50%)"
+              color="black"
+              p={4}
+              zIndex="1"
+              textAlign="left"
             >
-              {chunk.map(product => (
-                <GridItem
-                  key={product.id}
-                  w="100%"
-                  onMouseEnter={() => setHoveredProductId(product.id)}
-                  onMouseLeave={() => setHoveredProductId(null)}
-                >
-                  <Box
-                    position="relative"
-                    borderWidth="1px"
-                    borderRadius="lg"
-                    overflow="hidden"
-                    height="250px"
-                    transition="all 0.3s ease"
-                  >
-                    <Box
-                      backgroundImage={`url(${product.image})`}
-                      backgroundSize="cover"
-                      backgroundPosition="center"
-                      height="100%"
-                    />
-                    <Box
-                      position="absolute"
-                      top="0"
-                      left="0"
-                      width="100%"
-                      height="100%"
-                      backgroundColor="rgba(0, 0, 0, 0.5)"
-                      display={
-                        hoveredProductId === product.id ? 'flex' : 'none'
-                      }
-                      alignItems="center"
-                      justifyContent="center"
-                      transition="opacity 0.5s ease"
-                      opacity={hoveredProductId === product.id ? 1 : 0}
-                    >
-                      <Button
-                        variant={'solid'}
-                        colorScheme="blue"
-                        onClick={() => handleInquireNow(product)}
-                      >
-                        Inquire Now
-                      </Button>
-                    </Box>
-                  </Box>
-                  <VStack mt={2}>
-                    <Heading fontSize="2xl" color="gray.500">
-                      {product.title}
-                    </Heading>
-                    <Text fontSize="xl" color="blue.400">
-                      ${product.price}
-                    </Text>
-                  </VStack>
-                </GridItem>
-              ))}
-            </Grid>
-          ))}
-        </Carousel>
+              <Heading as="h2" size="lg" color="blue.400">
+                Oil Filters
+              </Heading>
+              <Text as="p" fontSize="lg" mb={4}>
+                Sale 40% Off
+              </Text>
+              <Button
+                variant="ghost"
+                colorScheme="blue"
+                onClick={() => handleInquireNow({ title: 'Oil Filters' })}
+              >
+                Inquire Now
+              </Button>
+            </Box>
+          </GridItem>
+
+          <GridItem position="relative">
+            <Box
+              maxH={'100%'}
+              maxW={'100%'}
+              _hover={{ transform: 'scale(1.1)' }}
+              bgRepeat="no-repeat"
+              bgImage="url(https://bigon-7.myshopify.com/cdn/shop/files/banner-2-2_1024x1024.jpg?v=1643779637)"
+              bgSize="cover"
+              bgPosition="center"
+              h="100%"
+              borderRadius="lg"
+              overflow="hidden"
+              position="relative"
+              role="group"
+              transition="all 0.3s ease"
+            ></Box>
+            <Box
+              position="absolute"
+              transition="all 0.3s ease"
+              top="50%"
+              left="22.4%"
+              transform="translate(-50%, -50%)"
+              color="black"
+              p={4}
+              zIndex="1"
+              textAlign="left"
+            >
+              <Heading as="h2" size="lg" color="blue.400">
+                Oil Filters
+              </Heading>
+              <Text as="p" fontSize="lg" mb={4}>
+                Sale 40% Off
+              </Text>
+              <Button
+                variant="ghost"
+                colorScheme="blue"
+                onClick={() => handleInquireNow({ title: 'Oil Filters' })}
+              >
+                Inquire Now
+              </Button>
+            </Box>
+          </GridItem>
+        </Grid>
       </Container>
+
+      <ProductCarousel
+        productChunks={productChunks}
+        onInquireNow={handleInquireNow}
+      />
       {selectedProduct && (
         <InquiryModal
           isOpen={isOpen}
@@ -583,18 +566,19 @@ const Home = () => {
       )}
       <Grid
         mt={10}
-        h={'40vh'}
+        h={['90vh', '90vh', '100vh', '40vh']}
         w={'100%'}
         mx={'auto'}
-        maxW={'container.xl'}
-        templateColumns={['1fr', '1fr', '1fr 1fr']}
+        maxW={['400px', '500px', '700px', '1000px', 'container.xl']}
+        templateColumns={['1fr', '1fr', '1fr', '1fr 1fr 1fr']}
+        gap={2}
       >
         <GridItem position="relative">
           <Box
             _hover={{ transform: 'scale(1.1)' }}
             bgRepeat={'no-repeat'}
             bgImage="url(https://bigon-7.myshopify.com/cdn/shop/files/banner-2-2_1024x1024.jpg?v=1643779637)"
-            bgSize="contain"
+            bgSize={['cover', 'cover', 'cover', 'contain']}
             bgPosition="center"
             h="100%"
             borderRadius="lg"
@@ -607,20 +591,25 @@ const Home = () => {
               position="absolute"
               transition={'all 0.3s ease'}
               _groupHover={{ transform: 'scale(0.9)' }}
-              top={'25%'}
-              left={'10%'}
+              top={['25%', '25%', '25%', '25%', '30%']}
+              left={'0%'}
               color="black"
               p={4}
               zIndex="1"
             >
+              <Text
+                as="p"
+                fontSize={['24px', '24px', '30px', '30px', '36px']}
+                children="Super Sale"
+              />
               <Heading
                 as="h2"
-                size="xl"
-                children="Oil Filters"
-                color={'blue.400'}
+                fontSize={['20px', '20px', '24px', '24px', '30px']}
+                children="Car Wheel"
+                mb={2}
               />
-              <Text as="p" fontSize={'xl'} children="Sale 40% Off" mb={4} />
               <Button
+                fontSize={['16px', '16px', '20px', '20px', '20px']}
                 variant="ghost"
                 colorScheme="blue"
                 onClick={() => handleInquireNow({ title: 'Oil Filters' })}
@@ -630,13 +619,12 @@ const Home = () => {
             </Box>
           </Box>
         </GridItem>
-
         <GridItem position="relative">
           <Box
             _hover={{ transform: 'scale(1.1)' }}
             bgRepeat={'no-repeat'}
             bgImage="url(https://bigon-7.myshopify.com/cdn/shop/files/banner-2-2_1024x1024.jpg?v=1643779637)"
-            bgSize="contain"
+            bgSize={['cover', 'cover', 'cover', 'contain']}
             bgPosition="center"
             h="100%"
             borderRadius="lg"
@@ -649,203 +637,25 @@ const Home = () => {
               position="absolute"
               transition={'all 0.3s ease'}
               _groupHover={{ transform: 'scale(0.9)' }}
-              top={'25%'}
-              left={'10%'}
+              top={['25%', '25%', '25%', '25%', '30%']}
+              left={'0%'}
               color="black"
               p={4}
               zIndex="1"
             >
+              <Text
+                as="p"
+                fontSize={['24px', '24px', '30px', '30px', '36px']}
+                children="Super Sale"
+              />
               <Heading
                 as="h2"
-                size="xl"
-                children="Oil Filters"
-                color={'blue.400'}
+                fontSize={['20px', '20px', '24px', '24px', '30px']}
+                children="Car Wheel"
+                mb={2}
               />
-              <Text as="p" fontSize={'xl'} children="Sale 40% Off" mb={4} />
               <Button
-                variant="ghost"
-                colorScheme="blue"
-                onClick={() => handleInquireNow({ title: 'Oil Filters' })}
-              >
-                Inquire Now
-              </Button>
-            </Box>
-          </Box>
-        </GridItem>
-      </Grid>
-      <Container maxW="container.xl" paddingX={0} mt={14}>
-        <HStack justifyContent="space-between" mb={4}>
-          <Heading
-            fontFamily={'Fira Sans Condensed'}
-            fontWeight={'600'}
-            color={'blue.400'}
-            fontSize={['2xl', '2xl', '3xl', '3xl', '4xl']}
-          >
-            Exclusive Products
-          </Heading>
-
-          <Link to="/products">
-            <Button colorScheme="blue">View All</Button>
-          </Link>
-        </HStack>
-        <Carousel
-          showThumbs={false}
-          infiniteLoop
-          showStatus={false}
-          emulateTouch
-          onChange={index => setCurrentSlide(index)}
-          renderArrowPrev={(onClickHandler, hasPrev, label) =>
-            hasPrev && (
-              <Button
-                onClick={onClickHandler}
-                position="absolute"
-                top="50%"
-                left="0"
-                transform="translateY(-50%)"
-                zIndex="2"
-                bg="blue.400"
-                color="white"
-                _hover={{ bg: 'blue.500' }}
-                _active={{ bg: 'blue.600' }}
-                aria-label={label}
-              >
-                <RiArrowLeftSLine />
-              </Button>
-            )
-          }
-          renderArrowNext={(onClickHandler, hasNext, label) =>
-            hasNext && (
-              <Button
-                onClick={onClickHandler}
-                position="absolute"
-                top="50%"
-                right="0"
-                transform="translateY(-50%)"
-                zIndex="2"
-                bg="blue.400"
-                color="white"
-                _hover={{ bg: 'blue.500' }}
-                _active={{ bg: 'blue.600' }}
-                aria-label={label}
-              >
-                <RiArrowRightSLine />
-              </Button>
-            )
-          }
-        >
-          {productChunks.map((chunk, index) => (
-            <Grid
-              key={index}
-              templateColumns={[
-                'repeat(2, 1fr)',
-                'repeat(2, 1fr)',
-                'repeat(4, 1fr)',
-              ]}
-              gap={6}
-              padding={4}
-            >
-              {chunk.map(product => (
-                <GridItem
-                  key={product.id}
-                  w="100%"
-                  onMouseEnter={() => setHoveredProductId(product.id)}
-                  onMouseLeave={() => setHoveredProductId(null)}
-                >
-                  <Box
-                    position="relative"
-                    borderWidth="1px"
-                    borderRadius="lg"
-                    overflow="hidden"
-                    height="250px"
-                    transition="all 0.3s ease"
-                  >
-                    <Box
-                      backgroundImage={`url(${product.image})`}
-                      backgroundSize="cover"
-                      backgroundPosition="center"
-                      height="100%"
-                    />
-                    <Box
-                      position="absolute"
-                      top="0"
-                      left="0"
-                      width="100%"
-                      height="100%"
-                      backgroundColor="rgba(0, 0, 0, 0.5)"
-                      display={
-                        hoveredProductId === product.id ? 'flex' : 'none'
-                      }
-                      alignItems="center"
-                      justifyContent="center"
-                      transition="opacity 0.5s ease"
-                      opacity={hoveredProductId === product.id ? 1 : 0}
-                    >
-                      <Button
-                        variant={'solid'}
-                        colorScheme="blue"
-                        onClick={() => handleInquireNow(product)}
-                      >
-                        Inquire Now
-                      </Button>
-                    </Box>
-                  </Box>
-                  <VStack mt={2}>
-                    <Heading fontSize="2xl" color="gray.500">
-                      {product.title}
-                    </Heading>
-                    <Text fontSize="xl" color="blue.400">
-                      ${product.price}
-                    </Text>
-                  </VStack>
-                </GridItem>
-              ))}
-            </Grid>
-          ))}
-        </Carousel>
-      </Container>
-      {selectedProduct && (
-        <InquiryModal
-          isOpen={isOpen}
-          onClose={onClose}
-          product={selectedProduct}
-        />
-      )}
-      <Grid
-        mt={10}
-        h={'40vh'}
-        w={'100%'}
-        mx={'auto'}
-        maxW={'container.xl'}
-        templateColumns={['1fr', '1fr', '1fr 1fr 1fr']}
-        gap={6}
-      >
-        <GridItem position="relative">
-          <Box
-            _hover={{ transform: 'scale(1.1)' }}
-            bgRepeat={'no-repeat'}
-            bgImage="url(https://bigon-7.myshopify.com/cdn/shop/files/banner-2-2_1024x1024.jpg?v=1643779637)"
-            bgSize="contain"
-            bgPosition="center"
-            h="100%"
-            borderRadius="lg"
-            overflow="hidden"
-            position="relative"
-            role="group"
-            transition={'all 0.3s ease'}
-          >
-            <Box
-              position="absolute"
-              transition={'all 0.3s ease'}
-              _groupHover={{ transform: 'scale(0.9)' }}
-              top={'25%'}
-              left={'0%'}
-              color="black"
-              p={4}
-              zIndex="1"
-            >
-              <Text as="p" fontSize={'lg'} children="Super Sale" />
-              <Heading as="h2" size="lg" children="Car Wheel" mb={2} />
-              <Button
+                fontSize={['16px', '16px', '20px', '20px', '20px']}
                 variant="ghost"
                 colorScheme="blue"
                 onClick={() => handleInquireNow({ title: 'Oil Filters' })}
@@ -860,7 +670,7 @@ const Home = () => {
             _hover={{ transform: 'scale(1.1)' }}
             bgRepeat={'no-repeat'}
             bgImage="url(https://bigon-7.myshopify.com/cdn/shop/files/banner-2-2_1024x1024.jpg?v=1643779637)"
-            bgSize="contain"
+            bgSize={['cover', 'cover', 'cover', 'contain']}
             bgPosition="center"
             h="100%"
             borderRadius="lg"
@@ -873,51 +683,25 @@ const Home = () => {
               position="absolute"
               transition={'all 0.3s ease'}
               _groupHover={{ transform: 'scale(0.9)' }}
-              top={'25%'}
+              top={['25%', '25%', '25%', '25%', '30%']}
               left={'0%'}
               color="black"
               p={4}
               zIndex="1"
             >
-              <Text as="p" fontSize={'lg'} children="Super Sale" />
-              <Heading as="h2" size="lg" children="Car Wheel" mb={2} />
+              <Text
+                as="p"
+                fontSize={['24px', '24px', '30px', '30px', '36px']}
+                children="Super Sale"
+              />
+              <Heading
+                as="h2"
+                fontSize={['20px', '20px', '24px', '24px', '30px']}
+                children="Car Wheel"
+                mb={2}
+              />
               <Button
-                variant="ghost"
-                colorScheme="blue"
-                onClick={() => handleInquireNow({ title: 'Oil Filters' })}
-              >
-                Inquire Now
-              </Button>
-            </Box>
-          </Box>
-        </GridItem>
-        <GridItem position="relative">
-          <Box
-            _hover={{ transform: 'scale(1.1)' }}
-            bgRepeat={'no-repeat'}
-            bgImage="url(https://bigon-7.myshopify.com/cdn/shop/files/banner-2-2_1024x1024.jpg?v=1643779637)"
-            bgSize="contain"
-            bgPosition="center"
-            h="100%"
-            borderRadius="lg"
-            overflow="hidden"
-            position="relative"
-            role="group"
-            transition={'all 0.3s ease'}
-          >
-            <Box
-              position="absolute"
-              transition={'all 0.3s ease'}
-              _groupHover={{ transform: 'scale(0.9)' }}
-              top={'25%'}
-              left={'0%'}
-              color="black"
-              p={4}
-              zIndex="1"
-            >
-              <Text as="p" fontSize={'lg'} children="Super Sale" />
-              <Heading as="h2" size="lg" children="Car Wheel" mb={2} />
-              <Button
+                fontSize={['16px', '16px', '20px', '20px', '20px']}
                 variant="ghost"
                 colorScheme="blue"
                 onClick={() => handleInquireNow({ title: 'Oil Filters' })}
@@ -929,7 +713,7 @@ const Home = () => {
         </GridItem>
       </Grid>
       <Box
-        minH={'90vh'}
+        minH={'100vh'}
         maxW="container.xl"
         mx="auto"
         mt={16}
@@ -951,6 +735,7 @@ const Home = () => {
           showThumbs={false}
           infiniteLoop
           showStatus={false}
+          swipeable={false}
           emulateTouch
           onChange={index => setCurrentSlide(index)}
           renderArrowPrev={(onClickHandler, hasPrev, label) =>
@@ -998,7 +783,9 @@ const Home = () => {
                 templateRows={['repeat(3, 1fr)']}
                 templateColumns={['1fr', 'repeat(3, 1fr)']}
                 gap={6}
-                padding={4}
+                // padding={4}
+                py={'12'}
+                px={'4'}
               >
                 {chunk.map(product => (
                   <GridItem
@@ -1011,7 +798,7 @@ const Home = () => {
                       boxShadow={'0 0 10px 2px rgba(0,0,0,0.2)'}
                       rounded={'md'}
                     >
-                      <Link href={`/products/${product.id}`}>
+                      <Link to={`/products/${product.id}`}>
                         <Image
                           src={product.image}
                           alt={product.title}
@@ -1048,25 +835,127 @@ const Home = () => {
 
 export default Home;
 
-const gridItemCard = ({ product, setHoveredProductId }) => (
-  <GridItem
-    key={product.id}
-    w="100%"
-    onMouseEnter={() => setHoveredProductId(product.id)}
-    onMouseLeave={() => setHoveredProductId(null)}
-  >
-    <HStack>
-      <Link href={`/products/${product.id}`}>
-        <Image src={product.image} alt={product.title} w="200px" h="200px" />
-      </Link>
-      <VStack>
-        <Heading fontSize="2xl" color="gray.500">
-          {product.title}
-        </Heading>
-        <Text fontSize="xl" color="blue.400">
-          ${product.price}
-        </Text>
-      </VStack>
-    </HStack>
-  </GridItem>
-);
+const ProductCarousel = ({ productChunks, onInquireNow }) => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [hoveredProductId, setHoveredProductId] = useState(null);
+
+  return (
+    <Container maxW="container.xl" mx="auto" mt={16}>
+      <Carousel
+        showThumbs={false}
+        infiniteLoop
+        showStatus={false}
+        swipeable={false}
+        emulateTouch
+        onChange={index => setCurrentSlide(index)}
+        renderArrowPrev={(onClickHandler, hasPrev, label) =>
+          hasPrev && (
+            <Button
+              onClick={onClickHandler}
+              position="absolute"
+              top="50%"
+              left="0"
+              transform="translateY(-50%)"
+              zIndex="2"
+              bg="blue.400"
+              color="white"
+              _hover={{ bg: 'blue.500' }}
+              _active={{ bg: 'blue.600' }}
+              aria-label={label}
+            >
+              <RiArrowLeftSLine />
+            </Button>
+          )
+        }
+        renderArrowNext={(onClickHandler, hasNext, label) =>
+          hasNext && (
+            <Button
+              onClick={onClickHandler}
+              position="absolute"
+              top="50%"
+              right="0"
+              transform="translateY(-50%)"
+              zIndex="2"
+              bg="blue.400"
+              color="white"
+              _hover={{ bg: 'blue.500' }}
+              _active={{ bg: 'blue.600' }}
+              aria-label={label}
+            >
+              <RiArrowRightSLine />
+            </Button>
+          )
+        }
+      >
+        {productChunks.map((chunk, index) => (
+          <Grid
+            key={index}
+            templateColumns={[
+              'repeat(2, 1fr)',
+              'repeat(2, 1fr)',
+              'repeat(2, 1fr)',
+              'repeat(4, 1fr)',
+            ]}
+            gap={[6, 6, 6, 6]}
+            padding={4}
+          >
+            {chunk.map(product => (
+              <GridItem
+                key={product.id}
+                w="100%"
+                onMouseEnter={() => setHoveredProductId(product.id)}
+                onMouseLeave={() => setHoveredProductId(null)}
+              >
+                <Box
+                  position="relative"
+                  borderWidth="1px"
+                  borderRadius="lg"
+                  overflow="hidden"
+                  height={['200px', '200px', '250px', '250px']}
+                  transition="all 0.3s ease"
+                >
+                  <Box
+                    backgroundImage={`url(${product.image})`}
+                    bgRepeat={'no-repeat'}
+                    backgroundSize={['contain', 'contain', 'contain', 'cover']}
+                    backgroundPosition="center"
+                    height="100%"
+                  />
+                  <Box
+                    position="absolute"
+                    top="0"
+                    left="0"
+                    width="100%"
+                    height="100%"
+                    backgroundColor="rgba(0, 0, 0, 0.5)"
+                    display={hoveredProductId === product.id ? 'flex' : 'none'}
+                    alignItems="center"
+                    justifyContent="center"
+                    transition="opacity 0.5s ease"
+                    opacity={hoveredProductId === product.id ? 1 : 0}
+                  >
+                    <Button
+                      variant={'solid'}
+                      colorScheme="blue"
+                      onClick={() => onInquireNow(product)}
+                    >
+                      Inquire Now
+                    </Button>
+                  </Box>
+                </Box>
+                <VStack mt={2}>
+                  <Heading fontSize="2xl" color="gray.500">
+                    {product.title}
+                  </Heading>
+                  <Text fontSize="xl" color="blue.400">
+                    ${product.price}
+                  </Text>
+                </VStack>
+              </GridItem>
+            ))}
+          </Grid>
+        ))}
+      </Carousel>
+    </Container>
+  );
+};

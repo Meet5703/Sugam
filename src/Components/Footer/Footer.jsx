@@ -5,6 +5,7 @@ import {
   HStack,
   Icon,
   IconButton,
+  Stack,
   Text,
   VStack,
 } from '@chakra-ui/react';
@@ -14,9 +15,18 @@ import { IoLogoFacebook } from 'react-icons/io';
 import { RiInstagramFill, RiTwitterFill, RiTwitterLine } from 'react-icons/ri';
 const Footer = () => {
   return (
-    <Container maxW={'container.xl'} paddingX={0} mt={28}>
-      <VStack w={'full'} justifyContent={'space-between'} alignItems={'center'}>
-        <HStack justifyContent={'space-between'} w={'full'}>
+    <Container maxW={'container.xl'} paddingX={0} mt={10}>
+      <Stack
+        direction={['column', 'column', 'column', 'row']}
+        w={'full'}
+        justifyContent={'space-between'}
+        alignItems={'center'}
+      >
+        <Stack
+          direction={['column', 'column', 'column', 'row']}
+          justifyContent={'space-between'}
+          w={'full'}
+        >
           <Heading
             children="SUGAM"
             fontFamily={'Asap'}
@@ -24,29 +34,29 @@ const Footer = () => {
             letterSpacing={'2px'}
             color={'blue.400'}
           />
-          <HStack>
+          <HStack maxW={'100px'} spacing={6}>
             <Link to={'/'}>
-              <Button colorScheme="blue" variant={'ghost'}>
+              <Text color={'blue.400'} colorScheme="blue" variant={'ghost'}>
                 Home
-              </Button>
+              </Text>
             </Link>
             <Link to={'/products'}>
               {' '}
-              <Button colorScheme="blue" variant={'ghost'}>
+              <Text color={'blue.400'} colorScheme="blue" variant={'ghost'}>
                 Products
-              </Button>
+              </Text>
             </Link>
             <Link to={'/about'}>
               {' '}
-              <Button colorScheme="blue" variant={'ghost'}>
+              <Text color={'blue.400'} colorScheme="blue" variant={'ghost'}>
                 About
-              </Button>
+              </Text>
             </Link>
             <Link to={'/contact'}>
               {' '}
-              <Button colorScheme="blue" variant={'ghost'}>
+              <Text color={'blue.400'} colorScheme="blue" variant={'ghost'}>
                 Contact
-              </Button>
+              </Text>
             </Link>
           </HStack>
           <HStack spacing={4}>
@@ -74,13 +84,13 @@ const Footer = () => {
               />
             </Link>
           </HStack>
-        </HStack>
+        </Stack>
         <Text opacity={'0.8'}>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam,
           soluta at quod tempore esse enim.
         </Text>
         <Text opacity={'0.8'}>© 2021 Sugam. All rights reserved. </Text>
-      </VStack>
+      </Stack>
     </Container>
   );
 };
