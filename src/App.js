@@ -5,14 +5,20 @@ import Home from './Pages/Home';
 import Navbar from './Components/Navbar/Navbar';
 import Footer from './Components/Footer/Footer';
 import './style.css';
+import Products from './Pages/Products/Products';
+import SingleProduct from './Pages/Products/singleProduct';
 function App() {
   return (
     <ChakraProvider theme={theme}>
       <Router>
         <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-        </Routes>
+        <div style={{ marginTop: '90px' }}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/products" element={<Products />} />
+            <Route path="/products/:id" element={<SingleProduct />} />
+          </Routes>
+        </div>
         <Footer />
       </Router>
     </ChakraProvider>

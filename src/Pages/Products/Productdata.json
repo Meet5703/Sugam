@@ -1,0 +1,66 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "Brake Pads",
+      "description": "High-quality brake pads for various car models.",
+      "imageUrl": "https://bigon-7.myshopify.com/cdn/shop/products/DOEReplicaWheels_27c2548f-749f-4188-b5a2-39b24b354c82_compact.jpg?v=1643284111",
+      "category": "Brakes",
+      "color": "Black",
+      "price": "$50",
+      "reviews": [
+        {
+          "id": 1,
+          "name": "John Doe",
+          "rating": 5,
+          "comment": "Great quality and performance!"
+        },
+        {
+          "id": 2,
+          "name": "Jane Smith",
+          "rating": 4,
+          "comment": "Good value for money."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Air Filter",
+      "description": "Durable air filters to improve engine performance.",
+      "imageUrl": "https://bigon-7.myshopify.com/cdn/shop/products/DOEReplicaWheels_27c2548f-749f-4188-b5a2-39b24b354c82_compact.jpg?v=1643284111",
+      "category": "Filters",
+      "color": "White",
+      "price": "$30",
+      "reviews": [
+        {
+          "id": 3,
+          "name": "Michael Johnson",
+          "rating": 3,
+          "comment": "Average product, could be better."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Spark Plugs",
+      "description": "Premium spark plugs for efficient combustion.",
+      "imageUrl": "https://bigon-7.myshopify.com/cdn/shop/products/DOEReplicaWheels_27c2548f-749f-4188-b5a2-39b24b354c82_compact.jpg?v=1643284111",
+      "category": "Engine",
+      "color": "Silver",
+      "price": "$20",
+      "reviews": []
+    },
+    {
+      "id": 4,
+      "title": "Oil Filter",
+      "description": "Reliable oil filters for cleaner engine oil.",
+      "imageUrl": "https://bigon-7.myshopify.com/cdn/shop/products/DOEReplicaWheels_27c2548f-749f-4188-b5a2-39b24b354c82_compact.jpg?v=1643284111",
+      "category": "Filters",
+      "color": "Blue",
+      "price": "$25",
+      "reviews": []
+    }
+  ],
+  "categories": ["Brakes", "Filters", "Engine", "Transmission"],
+  "colors": ["Black", "White", "Silver", "Blue"]
+}
