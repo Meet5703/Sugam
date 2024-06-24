@@ -25,19 +25,28 @@ import {
   Input,
   Textarea,
   useDisclosure,
+  Stack,
 } from '@chakra-ui/react';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import productsData from './Productdata.json';
+import { RiFilterLine } from 'react-icons/ri';
 
 const { products, categories, colors } = productsData;
 
 const Products = () => {
   const columns = useBreakpointValue({ base: 1, md: 2, lg: 3 });
+  const {
+    isOpen: isFilterOpen,
+    onOpen: onFilterOpen,
+    onClose: onFilterClose,
+  } = useDisclosure();
+  const { isOpen, onOpen, onClose } = useDisclosure();
   const [selectedCategories, setSelectedCategories] = useState([]);
   const [selectedColors, setSelectedColors] = useState([]);
-  const { isOpen, onOpen, onClose } = useDisclosure();
   const [currentProduct, setCurrentProduct] = useState(null);
+
+  const isMobile = useBreakpointValue({ base: true, lg: false });
 
   const handleCategoryChange = values => {
     setSelectedCategories(values);
@@ -60,6 +69,42 @@ const Products = () => {
     );
   });
 
+  const FilterOptions = ({ w }) => (
+    <VStack as="aside" width={w} alignItems="flex-start" spacing={5}>
+      <Box width="100%">
+        <Heading size="md" mb={3}>
+          Categories
+        </Heading>
+        <CheckboxGroup
+          onChange={handleCategoryChange}
+          value={selectedCategories}
+        >
+          <VStack alignItems="flex-start" spacing={2}>
+            {categories.map(category => (
+              <Checkbox key={category} value={category}>
+                {category}
+              </Checkbox>
+            ))}
+          </VStack>
+        </CheckboxGroup>
+      </Box>
+      <Box width="100%">
+        <Heading size="md" mb={3}>
+          Colors
+        </Heading>
+        <CheckboxGroup onChange={handleColorChange} value={selectedColors}>
+          <VStack alignItems="flex-start" spacing={2}>
+            {colors.map(color => (
+              <Checkbox key={color} value={color}>
+                {color}
+              </Checkbox>
+            ))}
+          </VStack>
+        </CheckboxGroup>
+      </Box>
+    </VStack>
+  );
+
   return (
     <Container minH={'100vh'} maxW={'container.xl'} py={10}>
       <Heading
@@ -70,50 +115,49 @@ const Products = () => {
       >
         Products
       </Heading>
-      <HStack alignItems="start" spacing={5}>
-        <VStack
-          as="aside"
-          width={{ base: '100%', md: '30%', lg: '25%' }}
-          alignItems="flex-start"
-          spacing={5}
-        >
-          <Box width="100%">
-            <Heading size="md" mb={3}>
-              Categories
-            </Heading>
-            <CheckboxGroup
-              onChange={handleCategoryChange}
-              value={selectedCategories}
+      <Stack
+        direction={['column', 'column', 'column', 'row']}
+        alignItems="start"
+        spacing={5}
+      >
+        {isMobile ? (
+          <>
+            <Button
+              onClick={onFilterOpen}
+              colorScheme="blue"
+              variant={'ghost'}
+              mb={5}
             >
-              <VStack alignItems="flex-start" spacing={2}>
-                {categories.map(category => (
-                  <Checkbox key={category} value={category}>
-                    {category}
-                  </Checkbox>
-                ))}
-              </VStack>
-            </CheckboxGroup>
-          </Box>
-          <Box width="100%">
-            <Heading size="md" mb={3}>
-              Colors
-            </Heading>
-            <CheckboxGroup onChange={handleColorChange} value={selectedColors}>
-              <VStack alignItems="flex-start" spacing={2}>
-                {colors.map(color => (
-                  <Checkbox key={color} value={color}>
-                    {color}
-                  </Checkbox>
-                ))}
-              </VStack>
-            </CheckboxGroup>
-          </Box>
-        </VStack>
+              Filters <RiFilterLine />
+            </Button>
+            <Modal isOpen={isFilterOpen} onClose={onFilterClose}>
+              <ModalOverlay />
+              <ModalContent>
+                <ModalHeader>Filter Options</ModalHeader>
+                <ModalCloseButton />
+                <ModalBody>
+                  <FilterOptions />
+                </ModalBody>
+                <ModalFooter>
+                  <Button colorScheme="blue" mr={3} onClick={onFilterClose}>
+                    Apply Filters
+                  </Button>
+                </ModalFooter>
+              </ModalContent>
+            </Modal>
+          </>
+        ) : (
+          <FilterOptions w={'250px'} />
+        )}
+
         <Box flex={1}>
           <Grid templateColumns={`repeat(${columns}, 1fr)`} gap={6}>
             {filteredProducts.map(product => (
               <GridItem key={product.id}>
                 <Box
+                  maxH={'600px'}
+                  h={'100%'}
+                  minH={'600px'}
                   border="1px solid"
                   borderColor="gray.200"
                   p={5}
@@ -127,14 +171,14 @@ const Products = () => {
                       alt={product.title}
                       mb={3}
                       borderRadius="md"
-                      boxSize="250px"
+                      boxSize={['350px', '350px', '350px', '250px', '350px']}
                       objectFit="cover"
                     />
 
-                    <Heading size="md" mb={2}>
+                    <Heading size="md" mb={2} fontWeight={'500'}>
                       {product.title}
                     </Heading>
-                    <Badge colorScheme="blue" mb={2}>
+                    <Badge colorScheme="blue" mb={2} fontSize={'lg'}>
                       {product.price}
                     </Badge>
                     <Text mb={4}>{product.description}</Text>
@@ -151,7 +195,7 @@ const Products = () => {
             ))}
           </Grid>
         </Box>
-      </HStack>
+      </Stack>
 
       {currentProduct && (
         <Modal isOpen={isOpen} onClose={onClose}>
