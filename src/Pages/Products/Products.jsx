@@ -1,9 +1,9 @@
+import React, { useState, useEffect } from 'react';
 import {
   Box,
   Button,
   Container,
   Heading,
-  HStack,
   VStack,
   Grid,
   GridItem,
@@ -26,15 +26,16 @@ import {
   Textarea,
   useDisclosure,
   Stack,
+  useToast,
 } from '@chakra-ui/react';
-import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import productsData from './Productdata.json';
+import axios from 'axios';
 import { RiFilterLine } from 'react-icons/ri';
 
-const { products, categories, colors } = productsData;
-
 const Products = () => {
+  const [products, setProducts] = useState([]);
+  const [categories, setCategories] = useState([]);
+  const [colors, setColors] = useState([]);
   const columns = useBreakpointValue({ base: 1, md: 2, lg: 3 });
   const {
     isOpen: isFilterOpen,
@@ -45,8 +46,37 @@ const Products = () => {
   const [selectedCategories, setSelectedCategories] = useState([]);
   const [selectedColors, setSelectedColors] = useState([]);
   const [currentProduct, setCurrentProduct] = useState(null);
+  const toast = useToast(); // Toast for notifications
 
   const isMobile = useBreakpointValue({ base: true, lg: false });
+
+  const BASE_URL = 'http://localhost:5000';
+
+  useEffect(() => {
+    fetchProducts();
+  }, []);
+
+  const fetchProducts = async () => {
+    try {
+      const response = await axios.get(
+        'http://localhost:5000/api/v1/products/getall'
+      );
+
+      const path = response.data.map(product =>
+        product.photo.split('\\').pop().split('/').pop()
+      );
+      setProducts(response.data);
+      // Extract categories and colors from the products
+      setCategories([
+        ...new Set(response.data.map(product => product.category)),
+      ]);
+      setColors([
+        ...new Set(response.data.map(product => product.colorOfPart)),
+      ]);
+    } catch (error) {
+      console.error('Error fetching products:', error);
+    }
+  };
 
   const handleCategoryChange = values => {
     setSelectedCategories(values);
@@ -65,7 +95,8 @@ const Products = () => {
     return (
       (selectedCategories.length === 0 ||
         selectedCategories.includes(product.category)) &&
-      (selectedColors.length === 0 || selectedColors.includes(product.color))
+      (selectedColors.length === 0 ||
+        selectedColors.includes(product.colorOfPart))
     );
   });
 
@@ -104,6 +135,42 @@ const Products = () => {
       </Box>
     </VStack>
   );
+
+  const handleInquirySubmit = async e => {
+    e.preventDefault();
+    const { name, email, phone, message } = e.target.elements;
+
+    try {
+      const response = await axios.post(
+        'http://localhost:5000/api/v1/inquiry/create',
+        {
+          productName: currentProduct.title,
+          name: name.value,
+          email: email.value,
+          number: phone.value,
+          message: message.value,
+        }
+      );
+      console.log(response.data);
+      toast({
+        title: 'Inquiry Sent',
+        description: response.data.message,
+        status: 'success',
+        duration: 3000,
+        isClosable: true,
+      });
+      onClose(); // Close modal after successful submission
+    } catch (error) {
+      console.error('Error sending inquiry:', error);
+      toast({
+        title: 'Error',
+        description: 'Failed to send inquiry',
+        status: 'error',
+        duration: 3000,
+        isClosable: true,
+      });
+    }
+  };
 
   return (
     <Container minH={'100vh'} maxW={'container.xl'} py={10}>
@@ -153,7 +220,7 @@ const Products = () => {
         <Box flex={1}>
           <Grid templateColumns={`repeat(${columns}, 1fr)`} gap={6}>
             {filteredProducts.map(product => (
-              <GridItem key={product.id}>
+              <GridItem key={product._id}>
                 <Box
                   maxH={'600px'}
                   h={'100%'}
@@ -165,9 +232,13 @@ const Products = () => {
                   boxShadow="md"
                   _hover={{ boxShadow: 'lg' }}
                 >
-                  <Link to={`/products/${product.id}`}>
+                  <Link to={`/products/${product._id}`}>
                     <Image
-                      src={product.imageUrl}
+                      src={`${BASE_URL}/public/photos/${product.photo
+                        .split('\\')
+                        .pop()
+                        .split('/')
+                        .pop()}`}
                       alt={product.title}
                       mb={3}
                       borderRadius="md"
@@ -204,37 +275,39 @@ const Products = () => {
             <ModalHeader>Inquire about {currentProduct.title}</ModalHeader>
             <ModalCloseButton />
             <ModalBody>
-              <form>
+              <form onSubmit={handleInquirySubmit}>
                 <FormControl id="product-name" mb={4}>
                   <FormLabel>Product Name</FormLabel>
                   <Input value={currentProduct.title} isReadOnly />
                 </FormControl>
                 <FormControl id="name" mb={4}>
                   <FormLabel>Name</FormLabel>
-                  <Input placeholder="Your name" type="text" />
+                  <Input name="name" placeholder="Your name" type="text" />
                 </FormControl>
                 <FormControl id="email" mb={4}>
                   <FormLabel>Email</FormLabel>
-                  <Input type="email" placeholder="Your email" />
+                  <Input name="email" type="email" placeholder="Your email" />
                 </FormControl>
                 <FormControl id="phone" mb={4}>
                   <FormLabel>Phone Number</FormLabel>
-                  <Input placeholder="Your phone number" type="tel" />
+                  <Input
+                    name="phone"
+                    placeholder="Your phone number"
+                    type="tel"
+                  />
                 </FormControl>
                 <FormControl id="message" mb={4}>
                   <FormLabel>Message</FormLabel>
-                  <Textarea placeholder="Your message" />
+                  <Textarea name="message" placeholder="Your message" />
                 </FormControl>
+                <Button type="submit" colorScheme="blue" mr={3}>
+                  Send Inquiry
+                </Button>
+                <Button variant="ghost" onClick={onClose}>
+                  Cancel
+                </Button>
               </form>
             </ModalBody>
-            <ModalFooter>
-              <Button colorScheme="blue" mr={3} onClick={onClose}>
-                Send Inquiry
-              </Button>
-              <Button variant="ghost" onClick={onClose}>
-                Cancel
-              </Button>
-            </ModalFooter>
           </ModalContent>
         </Modal>
       )}

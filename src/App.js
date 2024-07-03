@@ -7,6 +7,7 @@ import Footer from './Components/Footer/Footer';
 import './style.css';
 import Products from './Pages/Products/Products';
 import SingleProduct from './Pages/Products/singleProduct';
+import AdminDashboard from './Pages/adminDashboard/Admin';
 function App() {
   return (
     <ChakraProvider theme={theme}>
@@ -17,6 +18,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/products" element={<Products />} />
             <Route path="/products/:id" element={<SingleProduct />} />
+            <Route path="/admin" element={<AdminDashboard />} />
           </Routes>
         </div>
         <Footer />

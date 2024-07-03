@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Box,
   Button,
@@ -21,6 +21,7 @@ import {
   FormLabel,
   Input,
   Image,
+  Spinner,
 } from '@chakra-ui/react';
 import { Carousel } from 'react-responsive-carousel';
 import Navbar from '../Components/Navbar/Navbar';
@@ -29,6 +30,8 @@ import { Link } from 'react-router-dom';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { RiArrowLeftSLine, RiArrowRightSLine } from 'react-icons/ri';
 import Footer from '../Components/Footer/Footer';
+import axios from 'axios';
+import FeaturedCarousel from './featuredProducts';
 const InquiryModal = ({ isOpen, onClose, product }) => {
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
@@ -86,290 +89,30 @@ const Home = () => {
       buttonText: 'Shop Now',
     },
   ];
+  // const featuredProducts = [];
+  // const exclusiveProducts = [];
+  // const chunkArray = (array, size) => {
+  //   const result = [];
+  //   for (let i = 0; i < array.length; i += size) {
+  //     result.push(array.slice(i, i + size));
+  //   }
+  //   return result;
+  // };
 
-  const exclusiveProducts = [
-    {
-      id: 1,
-      price: 500,
-      title: 'Product 1',
-      image:
-        'https://bigon-7.myshopify.com/cdn/shop/products/BrakeDiscforBMW_2cef1b4e-6e81-4734-aaf0-e65b8e803d47_1024x1024.jpg?v=1643284159_1',
-      link: '/product/1',
-    },
-    {
-      id: 2,
-      price: 500,
-      title: 'Product 2',
-      image:
-        'https://bigon-7.myshopify.com/cdn/shop/products/BrakeDiscforBMW_2cef1b4e-6e81-4734-aaf0-e65b8e803d47_1024x1024.jpg?v=1643284159_2',
-      link: '/product/2',
-    },
-    {
-      id: 3,
-      price: 500,
-      title: 'Product 3',
-      image:
-        'https://bigon-7.myshopify.com/cdn/shop/products/BrakeDiscforBMW_2cef1b4e-6e81-4734-aaf0-e65b8e803d47_1024x1024.jpg?v=1643284159_3',
-      link: '/product/3',
-    },
-    {
-      id: 4,
-      price: 500,
-      title: 'Product 4',
-      image:
-        'https://bigon-7.myshopify.com/cdn/shop/products/BrakeDiscforBMW_2cef1b4e-6e81-4734-aaf0-e65b8e803d47_1024x1024.jpg?v=1643284159_4',
-      link: '/product/4',
-    },
-    {
-      id: 5,
-      price: 500,
-      title: 'Product 5',
-      image:
-        'https://bigon-7.myshopify.com/cdn/shop/products/BrakeDiscforBMW_2cef1b4e-6e81-4734-aaf0-e65b8e803d47_1024x1024.jpg?v=1643284159_5',
-      link: '/product/5',
-    },
-    {
-      id: 6,
-      price: 500,
-      title: 'Product 6',
-      image:
-        'https://bigon-7.myshopify.com/cdn/shop/products/BrakeDiscforBMW_2cef1b4e-6e81-4734-aaf0-e65b8e803d47_1024x1024.jpg?v=1643284159_6',
-      link: '/product/6',
-    },
-    {
-      id: 7,
-      price: 500,
-      title: 'Product 7',
-      image:
-        'https://bigon-7.myshopify.com/cdn/shop/products/BrakeDiscforBMW_2cef1b4e-6e81-4734-aaf0-e65b8e803d47_1024x1024.jpg?v=1643284159_7',
-      link: '/product/7',
-    },
-    {
-      id: 8,
-      price: 500,
-      title: 'Product 8',
-      image:
-        'https://bigon-7.myshopify.com/cdn/shop/products/BrakeDiscforBMW_2cef1b4e-6e81-4734-aaf0-e65b8e803d47_1024x1024.jpg?v=1643284159_8',
-      link: '/product/8',
-    },
-  ];
-  const featuredProducts = [
-    {
-      id: 1,
-      price: 500,
-      title: 'Product 1',
-      image:
-        'https://bigon-7.myshopify.com/cdn/shop/products/DOEReplicaWheels_fda8d04c-c763-4ac9-87b7-6f12120372c0_95X106_crop_center.jpg?v=1643285091',
-      link: '/product/1',
-    },
-    {
-      id: 2,
-      price: 500,
-      title: 'Product 2',
-      image:
-        'https://bigon-7.myshopify.com/cdn/shop/products/DOEReplicaWheels_fda8d04c-c763-4ac9-87b7-6f12120372c0_95X106_crop_center.jpg?v=1643285091',
-      link: '/product/2',
-    },
-    {
-      id: 3,
-      price: 500,
-      title: 'Product 3',
-      image:
-        'https://bigon-7.myshopify.com/cdn/shop/products/DOEReplicaWheels_fda8d04c-c763-4ac9-87b7-6f12120372c0_95X106_crop_center.jpg?v=1643285091',
-      link: '/product/3',
-    },
-    {
-      id: 4,
-      price: 500,
-      title: 'Product 4',
-      image:
-        'https://bigon-7.myshopify.com/cdn/shop/products/DOEReplicaWheels_fda8d04c-c763-4ac9-87b7-6f12120372c0_95X106_crop_center.jpg?v=1643285091',
-      link: '/product/4',
-    },
-    {
-      id: 5,
-      price: 500,
-      title: 'Product 5',
-      image:
-        'https://bigon-7.myshopify.com/cdn/shop/products/DOEReplicaWheels_fda8d04c-c763-4ac9-87b7-6f12120372c0_95X106_crop_center.jpg?v=1643285091',
-      link: '/product/5',
-    },
-    {
-      id: 6,
-      price: 500,
-      title: 'Product 6',
-      image:
-        'https://bigon-7.myshopify.com/cdn/shop/products/DOEReplicaWheels_fda8d04c-c763-4ac9-87b7-6f12120372c0_95X106_crop_center.jpg?v=1643285091',
-      link: '/product/6',
-    },
-    {
-      id: 7,
-      price: 500,
-      title: 'Product 7',
-      image:
-        'https://bigon-7.myshopify.com/cdn/shop/products/DOEReplicaWheels_fda8d04c-c763-4ac9-87b7-6f12120372c0_95X106_crop_center.jpg?v=1643285091',
-      link: '/product/7',
-    },
-    {
-      id: 8,
-      price: 500,
-      title: 'Product 8',
-      image:
-        'https://bigon-7.myshopify.com/cdn/shop/products/DOEReplicaWheels_fda8d04c-c763-4ac9-87b7-6f12120372c0_95X106_crop_center.jpg?v=1643285091',
-      link: '/product/8',
-    },
-    {
-      id: 9,
-      price: 500,
-      title: 'Product 9',
-      image:
-        'https://bigon-7.myshopify.com/cdn/shop/products/DOEReplicaWheels_fda8d04c-c763-4ac9-87b7-6f12120372c0_95X106_crop_center.jpg?v=1643285091',
-      link: '/product/1',
-    },
-    {
-      id: 10,
-      price: 500,
-      title: 'Product 10',
-      image:
-        'https://bigon-7.myshopify.com/cdn/shop/products/DOEReplicaWheels_fda8d04c-c763-4ac9-87b7-6f12120372c0_95X106_crop_center.jpg?v=1643285091',
-      link: '/product/2',
-    },
-    {
-      id: 11,
-      price: 500,
-      title: 'Product 11',
-      image:
-        'https://bigon-7.myshopify.com/cdn/shop/products/DOEReplicaWheels_fda8d04c-c763-4ac9-87b7-6f12120372c0_95X106_crop_center.jpg?v=1643285091',
-      link: '/product/3',
-    },
-    {
-      id: 12,
-      price: 500,
-      title: 'Product 12',
-      image:
-        'https://bigon-7.myshopify.com/cdn/shop/products/DOEReplicaWheels_fda8d04c-c763-4ac9-87b7-6f12120372c0_95X106_crop_center.jpg?v=1643285091',
-      link: '/product/4',
-    },
-    {
-      id: 13,
-      price: 500,
-      title: 'Product 13',
-      image:
-        'https://bigon-7.myshopify.com/cdn/shop/products/DOEReplicaWheels_fda8d04c-c763-4ac9-87b7-6f12120372c0_95X106_crop_center.jpg?v=1643285091',
-      link: '/product/5',
-    },
-    {
-      id: 14,
-      price: 500,
-      title: 'Product 14',
-      image:
-        'https://bigon-7.myshopify.com/cdn/shop/products/DOEReplicaWheels_fda8d04c-c763-4ac9-87b7-6f12120372c0_95X106_crop_center.jpg?v=1643285091',
-      link: '/product/6',
-    },
-    {
-      id: 15,
-      price: 500,
-      title: 'Product 15',
-      image:
-        'https://bigon-7.myshopify.com/cdn/shop/products/DOEReplicaWheels_fda8d04c-c763-4ac9-87b7-6f12120372c0_95X106_crop_center.jpg?v=1643285091',
-      link: '/product/7',
-    },
-    {
-      id: 16,
-      price: 500,
-      title: 'Product 16',
-      image:
-        'https://bigon-7.myshopify.com/cdn/shop/products/DOEReplicaWheels_fda8d04c-c763-4ac9-87b7-6f12120372c0_95X106_crop_center.jpg?v=1643285091',
-      link: '/product/8',
-    },
-    {
-      id: 17,
-      price: 500,
-      title: 'Product 17',
-      image:
-        'https://bigon-7.myshopify.com/cdn/shop/products/DOEReplicaWheels_fda8d04c-c763-4ac9-87b7-6f12120372c0_95X106_crop_center.jpg?v=1643285091',
-      link: '/product/1',
-    },
-    {
-      id: 18,
-      price: 500,
-      title: 'Product 18',
-      image:
-        'https://bigon-7.myshopify.com/cdn/shop/products/DOEReplicaWheels_fda8d04c-c763-4ac9-87b7-6f12120372c0_95X106_crop_center.jpg?v=1643285091',
-      link: '/product/2',
-    },
-    {
-      id: 19,
-      price: 500,
-      title: 'Product 19',
-      image:
-        'https://bigon-7.myshopify.com/cdn/shop/products/DOEReplicaWheels_fda8d04c-c763-4ac9-87b7-6f12120372c0_95X106_crop_center.jpg?v=1643285091',
-      link: '/product/3',
-    },
-    {
-      id: 20,
-      price: 500,
-      title: 'Product 20',
-      image:
-        'https://bigon-7.myshopify.com/cdn/shop/products/DOEReplicaWheels_fda8d04c-c763-4ac9-87b7-6f12120372c0_95X106_crop_center.jpg?v=1643285091',
-      link: '/product/4',
-    },
-    {
-      id: 21,
-      price: 500,
-      title: 'Product 21',
-      image:
-        'https://bigon-7.myshopify.com/cdn/shop/products/DOEReplicaWheels_fda8d04c-c763-4ac9-87b7-6f12120372c0_95X106_crop_center.jpg?v=1643285091',
-      link: '/product/5',
-    },
-    {
-      id: 22,
-      price: 500,
-      title: 'Product 22',
-      image:
-        'https://bigon-7.myshopify.com/cdn/shop/products/DOEReplicaWheels_fda8d04c-c763-4ac9-87b7-6f12120372c0_95X106_crop_center.jpg?v=1643285091',
-      link: '/product/6',
-    },
-    {
-      id: 23,
-      price: 500,
-      title: 'Product 23',
-      image:
-        'https://bigon-7.myshopify.com/cdn/shop/products/DOEReplicaWheels_fda8d04c-c763-4ac9-87b7-6f12120372c0_95X106_crop_center.jpg?v=1643285091',
-      link: '/product/7',
-    },
-    {
-      id: 24,
-      price: 500,
-      title: 'Product 24',
-      image:
-        'https://bigon-7.myshopify.com/cdn/shop/products/DOEReplicaWheels_fda8d04c-c763-4ac9-87b7-6f12120372c0_95X106_crop_center.jpg?v=1643285091',
-      link: '/product/8',
-    },
-  ];
+  // const productChunks = chunkArray(exclusiveProducts, 4);
+  // const chunkArray2 = (arr, size) => {
+  //   return arr.reduce((chunks, item, i) => {
+  //     if (i % size === 0) {
+  //       chunks.push([item]);
+  //     } else {
+  //       chunks[chunks.length - 1].push(item);
+  //     }
+  //     return chunks;
+  //   }, []);
+  // };
 
-  const chunkArray = (array, size) => {
-    const result = [];
-    for (let i = 0; i < array.length; i += size) {
-      result.push(array.slice(i, i + size));
-    }
-    return result;
-  };
-
-  const productChunks = chunkArray(exclusiveProducts, 4);
-  const chunkArray2 = (arr, size) => {
-    return arr.reduce((chunks, item, i) => {
-      if (i % size === 0) {
-        chunks.push([item]);
-      } else {
-        chunks[chunks.length - 1].push(item);
-      }
-      return chunks;
-    }, []);
-  };
-
-  // Divide the featuredProducts into chunks of 9 products (3x3 grid)
-  const productChunks2 = chunkArray2(featuredProducts, 9);
+  // // Divide the featuredProducts into chunks of 9 products (3x3 grid)
+  // const productChunks2 = chunkArray2(featuredProducts, 9);
 
   const handleInquireNow = product => {
     setSelectedProduct(product);
@@ -445,10 +188,7 @@ const Home = () => {
         </Carousel>
       </Container>
 
-      <ProductCarousel
-        productChunks={productChunks}
-        onInquireNow={handleInquireNow}
-      />
+      <ProductCarousel onInquireNow={handleInquireNow} />
       {selectedProduct && (
         <InquiryModal
           isOpen={isOpen}
@@ -565,10 +305,7 @@ const Home = () => {
         fontSize="4xl"
         fontWeight={500}
       /> */}
-      <ProductCarousel
-        productChunks={productChunks}
-        onInquireNow={handleInquireNow}
-      />
+      <ExclusiveCarousel onInquireNow={handleInquireNow} />
       {selectedProduct && (
         <InquiryModal
           isOpen={isOpen}
@@ -583,7 +320,7 @@ const Home = () => {
         mx={'auto'}
         maxW={['400px', '500px', '700px', '1000px', 'container.xl']}
         templateColumns={['1fr', '1fr', '1fr', '1fr 1fr 1fr']}
-        gap={2}
+        gap={6}
       >
         <GridItem position="relative">
           <Box
@@ -611,12 +348,12 @@ const Home = () => {
             >
               <Text
                 as="p"
-                fontSize={['24px', '24px', '30px', '30px', '36px']}
+                fontSize={['24px', '24px', '30px', '30px', '32px']}
                 children="Super Sale"
               />
               <Heading
                 as="h2"
-                fontSize={['20px', '20px', '24px', '24px', '30px']}
+                fontSize={['20px', '20px', '24px', '24px', '28px']}
                 children="Car Wheel"
                 mb={2}
               />
@@ -657,12 +394,12 @@ const Home = () => {
             >
               <Text
                 as="p"
-                fontSize={['24px', '24px', '30px', '30px', '36px']}
+                fontSize={['24px', '24px', '30px', '30px', '32px']}
                 children="Super Sale"
               />
               <Heading
                 as="h2"
-                fontSize={['20px', '20px', '24px', '24px', '30px']}
+                fontSize={['20px', '20px', '24px', '24px', '28px']}
                 children="Car Wheel"
                 mb={2}
               />
@@ -703,12 +440,12 @@ const Home = () => {
             >
               <Text
                 as="p"
-                fontSize={['24px', '24px', '30px', '30px', '36px']}
+                fontSize={['24px', '24px', '30px', '30px', '32px']}
                 children="Super Sale"
               />
               <Heading
                 as="h2"
-                fontSize={['20px', '20px', '24px', '24px', '30px']}
+                fontSize={['20px', '20px', '24px', '24px', '28px']}
                 children="Car Wheel"
                 mb={2}
               />
@@ -724,132 +461,70 @@ const Home = () => {
           </Box>
         </GridItem>
       </Grid>
-      <Box
-        minH={'100vh'}
-        maxW="container.xl"
-        mx="auto"
-        mt={16}
-        position="relative"
-      >
-        <Heading
-          children="Featured Products"
-          mb={12}
-          color="blue.400"
-          position="absolute"
-          top="0%"
-          zIndex="1"
-          textAlign="left"
-          fontFamily="Oswald"
-          fontSize="4xl"
-          fontWeight={500}
-        />
-        <Carousel
-          showThumbs={false}
-          infiniteLoop
-          showStatus={false}
-          swipeable={false}
-          emulateTouch
-          onChange={index => setCurrentSlide(index)}
-          renderArrowPrev={(onClickHandler, hasPrev, label) =>
-            hasPrev && (
-              <Button
-                onClick={onClickHandler}
-                position="absolute"
-                top="6%"
-                right="14"
-                transform="translateY(-50%)"
-                zIndex="2"
-                bg="blue.400"
-                color="white"
-                _hover={{ bg: 'blue.500' }}
-                _active={{ bg: 'blue.600' }}
-                aria-label={label}
-              >
-                <RiArrowLeftSLine />
-              </Button>
-            )
-          }
-          renderArrowNext={(onClickHandler, hasNext, label) =>
-            hasNext && (
-              <Button
-                onClick={onClickHandler}
-                position="absolute"
-                top="6%"
-                right="0"
-                transform="translateY(-50%)"
-                zIndex="2"
-                bg="blue.400"
-                color="white"
-                _hover={{ bg: 'blue.500' }}
-                _active={{ bg: 'blue.600' }}
-                aria-label={label}
-              >
-                <RiArrowRightSLine />
-              </Button>
-            )
-          }
-        >
-          {productChunks2.map((chunk, index) => (
-            <Box key={index} position={'relative'} top={'10'}>
-              <Grid
-                templateRows={['repeat(3, 1fr)']}
-                templateColumns={['1fr', 'repeat(3, 1fr)']}
-                gap={6}
-                // padding={4}
-                py={'12'}
-                px={'4'}
-              >
-                {chunk.map(product => (
-                  <GridItem
-                    key={product.id}
-                    w="100%"
-                    onMouseEnter={() => setHoveredProductId(product.id)}
-                    onMouseLeave={() => setHoveredProductId(null)}
-                  >
-                    <HStack
-                      boxShadow={'0 0 10px 2px rgba(0,0,0,0.2)'}
-                      rounded={'md'}
-                    >
-                      <Link to={`/products/${product.id}`}>
-                        <Image
-                          src={product.image}
-                          alt={product.title}
-                          w="150px"
-                          h="150px"
-                        />
-                      </Link>
-                      <VStack
-                        justifyContent={'flex-start'}
-                        alignItems={'flex-start'}
-                      >
-                        <Heading fontSize="xl" textAlign={'left'}>
-                          {product.title}
-                        </Heading>
-                        <Text
-                          fontSize="xl"
-                          color={'blue.400'}
-                          textAlign={'left'}
-                        >
-                          ${product.price}
-                        </Text>
-                      </VStack>
-                    </HStack>
-                  </GridItem>
-                ))}
-              </Grid>
-            </Box>
-          ))}
-        </Carousel>
-      </Box>
+      <FeaturedCarousel />
     </Container>
   );
 };
 
 export default Home;
-
-const ProductCarousel = ({ productChunks, onInquireNow }) => {
+const ProductCarousel = ({ onInquireNow }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [hoveredProductId, setHoveredProductId] = useState(null);
+  const [latestProducts, setLatestProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null); // State for error handling
+
+  useEffect(() => {
+    const fetchLatestProducts = async () => {
+      try {
+        const response = await axios.get(
+          'http://localhost:5000/api/v1/products/latest'
+        );
+        console.log('Latest Products Response:', response.data);
+        setLatestProducts(response.data.data); // Set data array from response
+        setLoading(false);
+      } catch (error) {
+        console.error('Error fetching latest products:', error);
+        setError(error); // Set error state on fetch error
+        setLoading(false);
+      }
+    };
+
+    fetchLatestProducts();
+  }, []);
+  const chunkArray = (array, size) => {
+    const result = [];
+    for (let i = 0; i < array.length; i += size) {
+      result.push(array.slice(i, i + size));
+    }
+    return result;
+  };
+
+  const productChunks = chunkArray(latestProducts, 4);
+
+  if (loading) {
+    return (
+      <Container maxW="container.xl" mx="auto" mt={16} textAlign="center">
+        <Spinner size="xl" color="blue.400" />
+      </Container>
+    );
+  }
+
+  if (error) {
+    return (
+      <Container maxW="container.xl" mx="auto" mt={16} textAlign="center">
+        <Text color="red.500">
+          Error fetching latest products. Please try again later.
+        </Text>
+      </Container>
+    );
+  }
+
+  // Check if latestProducts is not an array
+  if (!Array.isArray(latestProducts)) {
+    console.error('Latest products is not an array:', latestProducts);
+    return null; // or handle the error state appropriately
+  }
 
   return (
     <Container maxW="container.xl" mx="auto" mt={16}>
@@ -885,7 +560,7 @@ const ProductCarousel = ({ productChunks, onInquireNow }) => {
               _active={{ bg: 'blue.600' }}
               aria-label={label}
             >
-              <RiArrowLeftSLine />
+              &lt;
             </Button>
           )
         }
@@ -904,7 +579,7 @@ const ProductCarousel = ({ productChunks, onInquireNow }) => {
               _active={{ bg: 'blue.600' }}
               aria-label={label}
             >
-              <RiArrowRightSLine />
+              &gt;
             </Button>
           )
         }
@@ -923,9 +598,9 @@ const ProductCarousel = ({ productChunks, onInquireNow }) => {
           >
             {chunk.map(product => (
               <GridItem
-                key={product.id}
+                key={product._id}
                 w="100%"
-                onMouseEnter={() => setHoveredProductId(product.id)}
+                onMouseEnter={() => setHoveredProductId(product._id)}
                 onMouseLeave={() => setHoveredProductId(null)}
               >
                 <Box
@@ -937,7 +612,11 @@ const ProductCarousel = ({ productChunks, onInquireNow }) => {
                   transition="all 0.3s ease"
                 >
                   <Box
-                    backgroundImage={`url(${product.image})`}
+                    backgroundImage={`url(${`http://localhost:5000/public/photos/${product.photo
+                      .split('\\')
+                      .pop()
+                      .split('/')
+                      .pop()}`})`}
                     bgRepeat={'no-repeat'}
                     backgroundSize={['contain', 'contain', 'contain', 'cover']}
                     backgroundPosition="center"
@@ -950,11 +629,205 @@ const ProductCarousel = ({ productChunks, onInquireNow }) => {
                     width="100%"
                     height="100%"
                     backgroundColor="rgba(0, 0, 0, 0.5)"
-                    display={hoveredProductId === product.id ? 'flex' : 'none'}
+                    display={hoveredProductId === product._id ? 'flex' : 'none'}
                     alignItems="center"
                     justifyContent="center"
                     transition="opacity 0.5s ease"
-                    opacity={hoveredProductId === product.id ? 1 : 0}
+                    opacity={hoveredProductId === product._id ? 1 : 0}
+                  >
+                    <Button
+                      variant={'solid'}
+                      colorScheme="blue"
+                      onClick={() => onInquireNow(product)}
+                    >
+                      Inquire Now
+                    </Button>
+                  </Box>
+                </Box>
+                <VStack mt={2}>
+                  <Heading fontSize="2xl" color="gray.500">
+                    {product.title}
+                  </Heading>
+                  <Text fontSize="xl" color="blue.400">
+                    ${product.price}
+                  </Text>
+                </VStack>
+              </GridItem>
+            ))}
+          </Grid>
+        ))}
+      </Carousel>
+    </Container>
+  );
+};
+const ExclusiveCarousel = ({ onInquireNow }) => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [hoveredProductId, setHoveredProductId] = useState(null);
+  const [exclusiveProducts, setExclusiveProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchExclusiveProducts = async () => {
+      try {
+        const response = await axios.get(
+          'http://localhost:5000/api/v1/products/exclusive'
+        );
+        console.log('Exclusive Products Response:', response.data);
+        setExclusiveProducts(response.data.data); // Set data array from response
+        setLoading(false);
+      } catch (error) {
+        console.error('Error fetching exclusive products:', error);
+        setError(error); // Set error state on fetch error
+        setLoading(false);
+      }
+    };
+
+    fetchExclusiveProducts();
+  }, []);
+
+  const chunkArray = (array, size) => {
+    const result = [];
+    for (let i = 0; i < array.length; i += size) {
+      result.push(array.slice(i, i + size));
+    }
+    return result;
+  };
+
+  const productChunks = chunkArray(exclusiveProducts, 4);
+
+  if (loading) {
+    return (
+      <Container maxW="container.xl" mx="auto" mt={16} textAlign="center">
+        <Spinner size="xl" color="blue.400" />
+      </Container>
+    );
+  }
+
+  if (error) {
+    return (
+      <Container maxW="container.xl" mx="auto" mt={16} textAlign="center">
+        <Text color="red.500">
+          Error fetching exclusive products. Please try again later.
+        </Text>
+      </Container>
+    );
+  }
+
+  // Check if exclusiveProducts is not an array
+  if (!Array.isArray(exclusiveProducts)) {
+    console.error('Exclusive products is not an array:', exclusiveProducts);
+    return null; // or handle the error state appropriately
+  }
+
+  return (
+    <Container maxW="container.xl" mx="auto" mt={16}>
+      <Heading
+        children="Exclusive Products"
+        mb={12}
+        color="blue.400"
+        zIndex="1"
+        textAlign="left"
+        fontFamily="Oswald"
+        fontSize="4xl"
+        fontWeight={500}
+      />
+      <Carousel
+        showThumbs={false}
+        infiniteLoop
+        showStatus={false}
+        swipeable={false}
+        emulateTouch
+        onChange={index => setCurrentSlide(index)}
+        renderArrowPrev={(onClickHandler, hasPrev, label) =>
+          hasPrev && (
+            <Button
+              onClick={onClickHandler}
+              position="absolute"
+              top="50%"
+              left="0"
+              transform="translateY(-50%)"
+              zIndex="2"
+              bg="blue.400"
+              color="white"
+              _hover={{ bg: 'blue.500' }}
+              _active={{ bg: 'blue.600' }}
+              aria-label={label}
+            >
+              &lt;
+            </Button>
+          )
+        }
+        renderArrowNext={(onClickHandler, hasNext, label) =>
+          hasNext && (
+            <Button
+              onClick={onClickHandler}
+              position="absolute"
+              top="50%"
+              right="0"
+              transform="translateY(-50%)"
+              zIndex="2"
+              bg="blue.400"
+              color="white"
+              _hover={{ bg: 'blue.500' }}
+              _active={{ bg: 'blue.600' }}
+              aria-label={label}
+            >
+              &gt;
+            </Button>
+          )
+        }
+      >
+        {productChunks.map((chunk, index) => (
+          <Grid
+            key={index}
+            templateColumns={[
+              'repeat(2, 1fr)',
+              'repeat(2, 1fr)',
+              'repeat(2, 1fr)',
+              'repeat(4, 1fr)',
+            ]}
+            gap={[6, 6, 6, 6]}
+            padding={4}
+          >
+            {chunk.map(product => (
+              <GridItem
+                key={product._id}
+                w="100%"
+                onMouseEnter={() => setHoveredProductId(product._id)}
+                onMouseLeave={() => setHoveredProductId(null)}
+              >
+                <Box
+                  position="relative"
+                  borderWidth="1px"
+                  borderRadius="lg"
+                  overflow="hidden"
+                  height={['200px', '200px', '250px', '250px']}
+                  transition="all 0.3s ease"
+                >
+                  <Box
+                    backgroundImage={`url(${`http://localhost:5000/public/photos/${product.photo
+                      .split('\\')
+                      .pop()
+                      .split('/')
+                      .pop()}`})`}
+                    bgRepeat={'no-repeat'}
+                    backgroundSize={['contain', 'contain', 'contain', 'cover']}
+                    backgroundPosition="center"
+                    height="100%"
+                  />
+                  <Box
+                    position="absolute"
+                    top="0"
+                    left="0"
+                    width="100%"
+                    height="100%"
+                    backgroundColor="rgba(0, 0, 0, 0.5)"
+                    display={hoveredProductId === product._id ? 'flex' : 'none'}
+                    alignItems="center"
+                    justifyContent="center"
+                    transition="opacity 0.5s ease"
+                    opacity={hoveredProductId === product._id ? 1 : 0}
                   >
                     <Button
                       variant={'solid'}
