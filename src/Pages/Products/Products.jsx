@@ -50,7 +50,7 @@ const Products = () => {
 
   const isMobile = useBreakpointValue({ base: true, lg: false });
 
-  const BASE_URL = 'http://localhost:5000';
+  const BASE_URL = 'https://sugamexpress.onrender.com';
 
   useEffect(() => {
     fetchProducts();
@@ -59,7 +59,7 @@ const Products = () => {
   const fetchProducts = async () => {
     try {
       const response = await axios.get(
-        'http://localhost:5000/api/v1/products/getall'
+        'https://sugamexpress.onrender.com/api/v1/products/getall'
       );
 
       const path = response.data.map(product =>
@@ -142,7 +142,7 @@ const Products = () => {
 
     try {
       const response = await axios.post(
-        'http://localhost:5000/api/v1/inquiry/create',
+        'https://sugamexpress.onrender.com/api/v1/inquiry/create',
         {
           productName: currentProduct.title,
           name: name.value,
