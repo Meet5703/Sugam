@@ -22,6 +22,11 @@ import {
   Input,
   Image,
   Spinner,
+  UnorderedList,
+  ListItem,
+  ListIcon,
+  List,
+  Stack,
 } from '@chakra-ui/react';
 import { Carousel } from 'react-responsive-carousel';
 import Navbar from '../Components/Navbar/Navbar';
@@ -32,6 +37,9 @@ import { RiArrowLeftSLine, RiArrowRightSLine } from 'react-icons/ri';
 import Footer from '../Components/Footer/Footer';
 import axios from 'axios';
 import FeaturedCarousel from './featuredProducts';
+import img1 from '../assets/1brk.png';
+import { IoIosArrowForward } from 'react-icons/io';
+import CardOfPart from '../Components/CardofPart/CardOfPart';
 const InquiryModal = ({ isOpen, onClose, product }) => {
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
@@ -114,6 +122,26 @@ const Home = () => {
   // // Divide the featuredProducts into chunks of 9 products (3x3 grid)
   // const productChunks2 = chunkArray2(featuredProducts, 9);
 
+  const listItems1 = [
+    {
+      title: 'Uniform Thickness of Braking Surface',
+      description:
+        'Guarantees optimal braking performance, enhanced comfort, and increased component durability.',
+    },
+    {
+      title: 'Precision Surface Finish (Ground or Fine)',
+      description: 'Ensures better disc fitment and smoother running-in.',
+    },
+    {
+      title: 'Strict Dimensional Tolerance',
+      description:
+        'Prevents disc vibration and promotes a stable braking experience.',
+    },
+    {
+      title: 'Optimal Casting Hardness',
+      description: 'Reduces wear and tear, providing exceptional performance.',
+    },
+  ];
   const handleInquireNow = product => {
     setSelectedProduct(product);
     onOpen();
@@ -187,7 +215,83 @@ const Home = () => {
           ))}
         </Carousel>
       </Container>
-
+      <CardOfPart
+        img={img1}
+        title1={'Braking Performance Overview'}
+        para1={
+          ` Brake Disc Manufacturer, Supplier in India | -` +
+          `Brake Rotor
+              Manufacturer`
+        }
+        title2={'Cutting Edge Engineering'}
+        para2={` At Cutting Edge Engineering, we recognize that brake discs are
+              vital to the braking system's performance. To deliver superior
+              braking performance, we meticulously follow these specifications
+              during the manufacturing of our brake disc castings:`}
+        listItems={listItems1}
+        para3={
+          'As a premier manufacturer and supplier of brake discs, we serve clients in India, Nepal, Bangladesh, Sri Lanka, , Dubai, USA, Russia, Germany, the UK, France, Italy, Spain, Poland, Romania, and the Netherlands. Contact us for high-quality brake rotors, disc brakes, and related components.'
+        }
+      />
+      {/* <Container
+        minW={['Container.sm', 'Container.md', 'container.xl']}
+        mt={24}
+      >
+        <Stack
+          flexDirection={['column', 'column', 'column', 'column', 'row']}
+          w={'100%'}
+          gap={20}
+        >
+          <Image src={img1} objectFit={'cover'} width={['']} />
+          <VStack alignItems={'flex-start'}>
+            <Heading
+              px={4}
+              children="Braking Performance Overview"
+              fontSize={'15px'}
+              fontWeight={400}
+            />
+            <Text px={4} fontSize={'60px'} lineHeight={'60px'} fontWeight={600}>
+              Brake Disc Manufacturer, Supplier in India |<br /> Brake Rotor
+              Manufacturer
+            </Text>
+            <Heading
+              mt={5}
+              px={4}
+              children={'Cutting Edge Engineering'}
+              fontSize={'24px'}
+            />
+            <Text px={4}>
+              At Cutting Edge Engineering, we recognize that brake discs are
+              vital to the braking system's performance. To deliver superior
+              braking performance, we meticulously follow these specifications
+              during the manufacturing of our brake disc castings:
+            </Text>
+            <List px={6}>
+              <ListItem>
+                <ListIcon as={IoIosArrowForward} />
+                <strong>Uniform Thickness of Braking Surface:</strong>{' '}
+                Guarantees optimal braking performance, enhanced comfort, and
+                increased component durability.
+              </ListItem>
+              <ListItem>
+                <ListIcon as={IoIosArrowForward} />
+                <strong>Precision Surface Finish (Ground or Fine):</strong>{' '}
+                Ensures better disc fitment and smoother running-in.
+              </ListItem>
+              <ListItem>
+                <ListIcon as={IoIosArrowForward} />
+                <strong>Strict Dimensional Tolerance:</strong> Prevents disc
+                vibration and promotes a stable braking experience.
+              </ListItem>
+              <ListItem>
+                <ListIcon as={IoIosArrowForward} />
+                <strong>Optimal Casting Hardness:</strong> Reduces wear and
+                tear, providing exceptional performance.
+              </ListItem>
+            </List>
+          </VStack>
+        </Stack>
+      </Container> */}
       <ProductCarousel onInquireNow={handleInquireNow} />
       {selectedProduct && (
         <InquiryModal
@@ -648,9 +752,6 @@ const ProductCarousel = ({ onInquireNow }) => {
                   <Heading fontSize="2xl" color="gray.500">
                     {product.title}
                   </Heading>
-                  <Text fontSize="xl" color="blue.400">
-                    ${product.price}
-                  </Text>
                 </VStack>
               </GridItem>
             ))}
