@@ -27,6 +27,12 @@ import {
   ListIcon,
   List,
   Stack,
+  Tabs,
+  TabList,
+  Tab,
+  TabPanel,
+  TabPanels,
+  TabIndicator,
 } from '@chakra-ui/react';
 import { Carousel } from 'react-responsive-carousel';
 import Navbar from '../Components/Navbar/Navbar';
@@ -215,24 +221,96 @@ const Home = () => {
           ))}
         </Carousel>
       </Container>
-      <CardOfPart
-        img={img1}
-        title1={'Braking Performance Overview'}
-        para1={
-          ` Brake Disc Manufacturer, Supplier in India | -` +
-          `Brake Rotor
+      <Container maxW={'container.xl'} mx={'auto'}>
+        <Tabs
+          mt={16}
+          position="relative"
+          variant="unstyled"
+          border={'none'}
+          // alignSelf={'center'}
+          // maxW={'container.xl'}
+        >
+          <TabList>
+            <Tab fontSize={['15px', '15px', '15px', '20px']} fontWeight={'500'}>
+              BRAKE DISC
+            </Tab>
+            <Tab fontSize={['15px', '15px', '15px', '20px']} fontWeight={'500'}>
+              BRAKE DRUM
+            </Tab>
+            <Tab fontSize={['15px', '15px', '15px', '20px']} fontWeight={'500'}>
+              WHEEL HUB
+            </Tab>
+          </TabList>
+          <TabIndicator
+            mt="-1.5px"
+            height="2px"
+            bg="blue.500"
+            borderRadius="1px"
+          />
+          <TabPanels>
+            <TabPanel>
+              <CardOfPart
+                img={img1}
+                title1={'Braking Performance Overview'}
+                para1={
+                  ` Brake Disc Manufacturer, Supplier in India | -` +
+                  `Brake Rotor
               Manufacturer`
-        }
-        title2={'Cutting Edge Engineering'}
-        para2={` At Cutting Edge Engineering, we recognize that brake discs are
+                }
+                title2={'Cutting Edge Engineering'}
+                para2={` At Cutting Edge Engineering, we recognize that brake discs are
               vital to the braking system's performance. To deliver superior
               braking performance, we meticulously follow these specifications
               during the manufacturing of our brake disc castings:`}
-        listItems={listItems1}
-        para3={
-          'As a premier manufacturer and supplier of brake discs, we serve clients in India, Nepal, Bangladesh, Sri Lanka, , Dubai, USA, Russia, Germany, the UK, France, Italy, Spain, Poland, Romania, and the Netherlands. Contact us for high-quality brake rotors, disc brakes, and related components.'
-        }
-      />
+                listItems={listItems1}
+                para3={
+                  'As a premier manufacturer and supplier of brake discs, we serve clients in India, Nepal, Bangladesh, Sri Lanka, , Dubai, USA, Russia, Germany, the UK, France, Italy, Spain, Poland, Romania, and the Netherlands. Contact us for high-quality brake rotors, disc brakes, and related components.'
+                }
+              />
+            </TabPanel>
+            <TabPanel>
+              <CardOfPart
+                img={img1}
+                title1={'Braking Performance Overview'}
+                para1={
+                  ` Brake Disc Manufacturer, Supplier in India | -` +
+                  `Brake Rotor
+              Manufacturer`
+                }
+                title2={'Cutting Edge Engineering'}
+                para2={` At Cutting Edge Engineering, we recognize that brake discs are
+              vital to the braking system's performance. To deliver superior
+              braking performance, we meticulously follow these specifications
+              during the manufacturing of our brake disc castings:`}
+                listItems={listItems1}
+                para3={
+                  'As a premier manufacturer and supplier of brake discs, we serve clients in India, Nepal, Bangladesh, Sri Lanka, , Dubai, USA, Russia, Germany, the UK, France, Italy, Spain, Poland, Romania, and the Netherlands. Contact us for high-quality brake rotors, disc brakes, and related components.'
+                }
+              />
+            </TabPanel>
+            <TabPanel>
+              <CardOfPart
+                img={img1}
+                title1={'Braking Performance Overview'}
+                para1={
+                  ` Brake Disc Manufacturer, Supplier in India | -` +
+                  `Brake Rotor
+              Manufacturer`
+                }
+                title2={'Cutting Edge Engineering'}
+                para2={` At Cutting Edge Engineering, we recognize that brake discs are
+              vital to the braking system's performance. To deliver superior
+              braking performance, we meticulously follow these specifications
+              during the manufacturing of our brake disc castings:`}
+                listItems={listItems1}
+                para3={
+                  'As a premier manufacturer and supplier of brake discs, we serve clients in India, Nepal, Bangladesh, Sri Lanka, , Dubai, USA, Russia, Germany, the UK, France, Italy, Spain, Poland, Romania, and the Netherlands. Contact us for high-quality brake rotors, disc brakes, and related components.'
+                }
+              />
+            </TabPanel>
+          </TabPanels>
+        </Tabs>
+      </Container>
       {/* <Container
         minW={['Container.sm', 'Container.md', 'container.xl']}
         mt={24}

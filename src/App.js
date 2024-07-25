@@ -8,6 +8,7 @@ import './style.css';
 import Products from './Pages/Products/Products';
 import SingleProduct from './Pages/Products/singleProduct';
 import AdminDashboard from './Pages/adminDashboard/Admin';
+import AboutUs from './Pages/About';
 function App() {
   return (
     <ChakraProvider theme={theme}>
@@ -16,6 +17,7 @@ function App() {
         <div style={{ marginTop: '90px' }}>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/about" element={AboutUs} />
             <Route path="/products" element={<Products />} />
             <Route path="/products/:id" element={<SingleProduct />} />
             <Route path="/admin" element={<AdminDashboard />} />

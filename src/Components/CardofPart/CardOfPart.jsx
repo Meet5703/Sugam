@@ -25,13 +25,19 @@ const CardOfPart = ({
     <>
       <Container
         minW={'container.xl'}
-        mt={24}
+        mt={4}
         display={['none', 'none', 'none', 'none', 'block']}
       >
         <Stack direction={['column', 'column', 'row']} w={'100%'} gap={20}>
           <Image src={img} objectFit={'contain'} mt={20} />
           <VStack alignItems={'flex-start'} spacing={5}>
-            <Heading px={4} fontSize={'15px'} fontWeight={400}>
+            <Heading
+              px={4}
+              fontSize={'20px'}
+              textTransform={'uppercase'}
+              letterSpacing={'2px'}
+              fontWeight={600}
+            >
               {title1}
             </Heading>
             <Text
@@ -59,13 +65,14 @@ const CardOfPart = ({
                 </ListItem>
               ))}
             </List>
+            <Text px={4}>{para3}</Text>
           </VStack>
         </Stack>
       </Container>
       <Container
         mx={'auto'}
         minW={'container.xl'}
-        mt={24}
+        mt={4}
         display={['none', 'none', 'none', 'block', 'none']}
       >
         <Stack
@@ -74,7 +81,13 @@ const CardOfPart = ({
           gap={20}
         >
           <VStack alignItems={'flex-start'} spacing={5}>
-            <Heading px={4} fontSize={'15px'} fontWeight={400}>
+            <Heading
+              px={4}
+              fontSize={'20px'}
+              textTransform={'uppercase'}
+              letterSpacing={'2px'}
+              fontWeight={600}
+            >
               {title1}
             </Heading>
             <Text
@@ -114,9 +127,9 @@ const CardOfPart = ({
         </Stack>
       </Container>
       <Container
-        mx={'auto'}
+        mx={['-10px', '-10px', '-10px', '-10px', 'auto']}
         minW={'container.xl'}
-        mt={24}
+        mt={4}
         display={['block', 'block', 'block', 'none', 'none']}
       >
         <Stack
@@ -125,7 +138,13 @@ const CardOfPart = ({
           gap={20}
         >
           <VStack alignItems={'flex-start'} spacing={5}>
-            <Heading px={4} fontSize={'15px'} fontWeight={400}>
+            <Heading
+              px={4}
+              fontSize={'20px'}
+              textTransform={'uppercase'}
+              letterSpacing={'2px'}
+              fontWeight={600}
+            >
               {title1}
             </Heading>
             <Text
