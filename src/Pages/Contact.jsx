@@ -86,7 +86,7 @@ const Contact = () => {
         <VStack h={'full'} w={'full'} justifyContent={'center'} spacing={'16'}>
           <Heading textAlign={'center'}>Contact Us</Heading>
           <form onSubmit={handleSubmit} style={{ width: '100%' }}>
-            <Box boxShadow={'0 0 10px 2px #dbd695'} p={'4'} borderRadius={'lg'}>
+            <Box boxShadow={'0 0 10px 2px #3182CE'} p={'4'} borderRadius={'lg'}>
               <Box my={'4'}>
                 <FormLabel htmlFor="name">Name</FormLabel>
                 <Input
@@ -96,7 +96,7 @@ const Contact = () => {
                   onChange={e => setName(e.target.value)}
                   placeholder="Enter Your Name"
                   type="text"
-                  focusBorderColor="yellow.500"
+                  focusBorderColor="blue.500"
                 />
               </Box>
               <Box my={'4'}>
@@ -108,7 +108,7 @@ const Contact = () => {
                   onChange={e => setEmail(e.target.value)}
                   placeholder="Enter Your Email Address"
                   type="email"
-                  focusBorderColor="yellow.500"
+                  focusBorderColor="blue.500"
                 />
               </Box>
               <Box my={'4'}>
@@ -142,7 +142,7 @@ const Contact = () => {
                   value={message}
                   onChange={e => setMessage(e.target.value)}
                   placeholder="Enter Your Message.."
-                  focusBorderColor="yellow.500"
+                  focusBorderColor="blue.500"
                 />
               </Box>
               {error && (
@@ -158,7 +158,7 @@ const Contact = () => {
               <Button
                 my={'4'}
                 w={'full'}
-                colorScheme={'yellow'}
+                colorScheme={'blue'}
                 type="submit"
                 isLoading={loading}
               >
@@ -167,7 +167,7 @@ const Contact = () => {
               <Box my={'4'}>
                 Request for a course?{' '}
                 <Link to={'/request'}>
-                  <Button colorScheme={'yellow'} variant={'link'}>
+                  <Button colorScheme={'blue'} variant={'link'}>
                     Click
                   </Button>{' '}
                   here
