@@ -92,6 +92,7 @@ const Contact = () => {
         justifyContent="space-between"
         alignItems="center"
         flexDirection={['column', 'column', 'row']}
+        gap={8}
       >
         <Box flex="1" mr={[0]} mb={[8, 8, 0]}>
           <AspectRatio ratio={16 / 9}>
