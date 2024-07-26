@@ -1,4 +1,11 @@
-import { Container, Heading, Icon, List, Text, Stack } from '@chakra-ui/react';
+import {
+  Container,
+  Heading,
+  Stack,
+  Text,
+  Box,
+  Link as ChakraLink,
+} from '@chakra-ui/react';
 import React from 'react';
 import { CgInstagram, CgFacebook } from 'react-icons/cg';
 import { Link } from 'react-router-dom';
@@ -19,52 +26,70 @@ const Footer = () => {
         gap={10}
       >
         <Heading
-          children="SUGAM"
           fontFamily={'Asap'}
           fontWeight={'500'}
           letterSpacing={'2px'}
           color={'blue.500'}
-        />
+        >
+          SUGAM
+        </Heading>
         <Stack
           spacing={[5, 5, 5, 20]}
           fontSize={20}
           textTransform={'uppercase'}
           direction={['column', 'column', 'column', 'row']}
         >
-          <Link to={'/'}>
-            <Text>Home</Text>
-          </Link>
-          <Link to={'/products'}>
-            <Text>Products</Text>
-          </Link>
-          <Link to={'/about'}>
-            <Text>About</Text>
-          </Link>
-          <Link to={'/contact'}>
-            <Text>Contact</Text>
-          </Link>
+          <ChakraLink as={Link} to={'/'}>
+            <Text _hover={{ color: 'blue.600', textDecoration: 'underline' }}>
+              Home
+            </Text>
+          </ChakraLink>
+          <ChakraLink as={Link} to={'/products'}>
+            <Text _hover={{ color: 'blue.600', textDecoration: 'underline' }}>
+              Products
+            </Text>
+          </ChakraLink>
+          <ChakraLink as={Link} to={'/about'}>
+            <Text _hover={{ color: 'blue.600', textDecoration: 'underline' }}>
+              About
+            </Text>
+          </ChakraLink>
+          <ChakraLink as={Link} to={'/contact'}>
+            <Text _hover={{ color: 'blue.600', textDecoration: 'underline' }}>
+              Contact
+            </Text>
+          </ChakraLink>
         </Stack>
         <Stack direction={'row'} gap={6} fontSize={28}>
-          <Link to={'instagram.com'}>
+          <Box
+            as={Link}
+            to={'https://instagram.com'}
+            _hover={{ transform: 'scale(1.1)', transition: '0.3s' }}
+          >
             <Text borderRadius={'full'} p={2} backgroundColor={'blue.200'}>
               <CgInstagram />
             </Text>
-          </Link>
-          <Link to={'facebook.com'}>
+          </Box>
+          <Box
+            as={Link}
+            to={'https://facebook.com'}
+            _hover={{ transform: 'scale(1.1)', transition: '0.3s' }}
+          >
             <Text borderRadius={'full'} p={2} backgroundColor={'blue.200'}>
               <CgFacebook />
             </Text>
-          </Link>
+          </Box>
         </Stack>
       </Stack>
       <Text
         mt={10}
         fontWeight={'600'}
         textAlign={'center'}
-        children={'© 2022 SUGAM. All rights reserved'}
         color={'blue.500'}
         fontSize={14}
-      />
+      >
+        © 2022 SUGAM. All rights reserved
+      </Text>
     </Container>
   );
 };
