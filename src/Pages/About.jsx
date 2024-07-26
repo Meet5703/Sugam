@@ -1,5 +1,6 @@
 import {
   Box,
+  Button,
   Container,
   Heading,
   Image,
@@ -253,15 +254,150 @@ const AboutUs = () => {
           </Stack>
         </VStack>
       </Box>
-      {/* <Stack
-        maxW={'container.xl'}
-        w={'100%'}
-        flexDir={['column', 'column', 'column', 'row']}
-      >
-        <Box position={'relative'}>
-          <Image src={img7} pos={'abso'} />
-        </Box>
-      </Stack> */}
+      <Box maxW={'container.xl'} mx={'auto'}>
+        <Stack
+          // maxW={'container.xl'}
+          w={'100%'}
+          alignItems={'center'}
+          justifyContent={'center'}
+          mx={'auto'}
+          flexDir={['column', 'column', 'column', 'row']}
+        >
+          {' '}
+          <Box
+            w={['350px', '350px', '500px', '550px']}
+            h={['450px', '450px', '350px', '350px']}
+            position={'relative'}
+          >
+            <Image
+              w={'100%'}
+              h={'100%'}
+              src={img6}
+              objectPosition={'center'}
+              objectFit={'cover'}
+              position={'absolute'}
+              top={0}
+              left={0}
+            />
+            <Box
+              position={'absolute'}
+              top={0}
+              left={0}
+              w={'100%'}
+              h={'100%'}
+              bg={'rgba(0, 0, 0, 0.7)'}
+              display={'flex'}
+              justifyContent={'center'}
+              alignItems={'center'}
+              padding={6}
+            >
+              <VStack w={'100%'} gap={4} alignItems={'flex-start'}>
+                <Heading
+                  color={'white'}
+                  fontSize={'20px'}
+                  fontWeight={'400'}
+                  pb={3}
+                >
+                  Break Disc
+                </Heading>
+                <VStack alignItems={'flex-start'} lineHeight={'40px'}>
+                  <Text
+                    fontWeight={'200'}
+                    fontSize={['36px', '36px', '36px', '46px']}
+                    color={'white'}
+                  >
+                    State-of-The-ART
+                  </Text>
+                  <Text
+                    fontWeight={'700'}
+                    fontSize={['36px', '36px', '36px', '46px']}
+                    color={'white'}
+                  >
+                    Balancing techniques
+                  </Text>
+                </VStack>
+                <Text color={'white'} pt={3}>
+                  For manufacturing range of engine components
+                </Text>
+                <Button
+                  colorScheme={'blue'}
+                  borderRadius={0}
+                  variant={'solid'}
+                  onClick={() => window.location.replace('/products')}
+                >
+                  Explore Products
+                </Button>
+              </VStack>
+            </Box>
+          </Box>
+          <Box
+            w={['350px', '350px', '500px', '550px']}
+            h={['450px', '450px', '350px', '350px']}
+            position={'relative'}
+          >
+            <Image
+              w={'100%'}
+              h={'100%'}
+              src={img7}
+              objectPosition={'center'}
+              objectFit={'cover'}
+              position={'absolute'}
+              top={0}
+              left={0}
+            />
+            <Box
+              position={'absolute'}
+              top={0}
+              left={0}
+              w={'100%'}
+              h={'100%'}
+              bg={'rgba(0, 0, 0, 0.7)'}
+              display={'flex'}
+              justifyContent={'center'}
+              alignItems={'center'}
+              padding={6}
+            >
+              <VStack w={'100%'} gap={4} alignItems={'flex-start'}>
+                <Heading
+                  color={'white'}
+                  fontSize={'20px'}
+                  fontWeight={'400'}
+                  pb={3}
+                >
+                  Break Disc
+                </Heading>
+                <VStack alignItems={'flex-start'} lineHeight={'40px'}>
+                  <Text
+                    fontWeight={'200'}
+                    fontSize={['36px', '36px', '36px', '46px']}
+                    color={'white'}
+                  >
+                    State-of-The-ART
+                  </Text>
+                  <Text
+                    fontWeight={'700'}
+                    fontSize={['36px', '36px', '36px', '46px']}
+                    color={'white'}
+                  >
+                    Balancing techniques
+                  </Text>
+                </VStack>
+                <Text color={'white'} pt={3}>
+                  For manufacturing range of engine components
+                </Text>
+                <Button
+                  colorScheme={'blue'}
+                  borderRadius={0}
+                  variant={'solid'}
+                  onClick={() => window.location.replace('/products')}
+                >
+                  Explore Products
+                </Button>
+              </VStack>
+            </Box>
+          </Box>
+        </Stack>
+      </Box>
     </Container>
   );
 };

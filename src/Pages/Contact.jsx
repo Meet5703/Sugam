@@ -1,4 +1,5 @@
 import {
+  AspectRatio,
   Box,
   Button,
   Container,
@@ -6,7 +7,6 @@ import {
   FormLabel,
   Heading,
   HStack,
-  Image,
   Input,
   Select,
   Textarea,
@@ -16,7 +16,6 @@ import {
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import img from '../assets/contact.png';
 
 const Contact = () => {
   const [name, setName] = useState('');
@@ -78,16 +77,57 @@ const Contact = () => {
   };
 
   return (
-    <Container my={'16'} maxW={'container.xl'}>
+    <Container my={'16'} maxW={'container.xl'} h={'100vh'} py={8}>
+      <Heading textAlign={'center'} mb={6}>
+        Contact Us
+      </Heading>
       <HStack justifyContent={'space-evenly'} w={'full'} alignItems={'center'}>
-        <VStack w={'full'} display={['none', 'none', 'block']}>
-          <Image src={img} display={['none', 'none', 'block']} />
+        <VStack
+          mb={16}
+          w={'full'}
+          display={['none', 'none', 'block']}
+          // spacing={'8'}
+          gap={8}
+          maxH={'500px'}
+        >
+          <AspectRatio ratio={16 / 9}>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.335902285328!2d-122.41941568468144!3d37.774929779758235!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085809c5b5d5b7f%3A0x5b5b5b5b5b5b5b5b!2sSan%20Francisco%2C%20CA%2C%20USA!5e0!3m2!1sen!2sin!4v1605713899985!5m2!1sen!2sin"
+              width="100%"
+              height="400"
+              frameBorder="0"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              aria-hidden="false"
+              tabIndex="0"
+            ></iframe>
+          </AspectRatio>
+          <Box
+            mt={4}
+            p={4}
+            border={'1px solid #3182CE'}
+            // boxShadow={'0 0 10px 2px #3182CE'}
+            borderRadius={'lg'}
+          >
+            <Heading size="md">Contact Details</Heading>
+            <Box mt={4}>
+              <strong>Address:</strong>
+              <p>123 Main Street, San Francisco, CA 94101</p>
+            </Box>
+            <Box mt={4}>
+              <strong>Phone:</strong>
+              <p>(123) 456-7890</p>
+            </Box>
+            <Box mt={4}>
+              <strong>Email:</strong>
+              <p>contact@example.com</p>
+            </Box>
+          </Box>
         </VStack>
         <VStack h={'full'} w={'full'} justifyContent={'center'} spacing={'16'}>
-          <Heading textAlign={'center'}>Contact Us</Heading>
           <form onSubmit={handleSubmit} style={{ width: '100%' }}>
             <Box boxShadow={'0 0 10px 2px #3182CE'} p={'4'} borderRadius={'lg'}>
-              <Box my={'4'}>
+              <Box>
                 <FormLabel htmlFor="name">Name</FormLabel>
                 <Input
                   required

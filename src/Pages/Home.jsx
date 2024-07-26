@@ -46,7 +46,7 @@ import FeaturedCarousel from './featuredProducts';
 import img1 from '../assets/1brk.png';
 import { IoIosArrowForward } from 'react-icons/io';
 import CardOfPart from '../Components/CardofPart/CardOfPart';
-const InquiryModal = ({ isOpen, onClose, product }) => {
+export const InquiryModal = ({ isOpen, onClose, product }) => {
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
       <ModalOverlay />
