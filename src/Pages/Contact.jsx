@@ -27,6 +27,7 @@ const Contact = () => {
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState('');
   const toast = useToast();
+
   const handleSubmit = async e => {
     e.preventDefault();
     setLoading(true);
@@ -77,24 +78,27 @@ const Contact = () => {
   };
 
   return (
-    <Container my={'16'} maxW={'container.xl'} h={'100vh'} py={8}>
-      <Heading textAlign={'center'} mb={6}>
+    <Container
+      my={16}
+      mx={'auto'}
+      maxW="container.xl"
+      h={['fit-content', 'fit-content', '100vh']}
+      py={8}
+    >
+      <Heading textAlign="center" mb={6}>
         Contact Us
       </Heading>
-      <HStack justifyContent={'space-evenly'} w={'full'} alignItems={'center'}>
-        <VStack
-          mb={16}
-          w={'full'}
-          display={['none', 'none', 'block']}
-          // spacing={'8'}
-          gap={8}
-          maxH={'500px'}
-        >
+      <HStack
+        justifyContent="space-between"
+        alignItems="center"
+        flexDirection={['column', 'column', 'row']}
+      >
+        <Box flex="1" mr={[0]} mb={[8, 8, 0]}>
           <AspectRatio ratio={16 / 9}>
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.335902285328!2d-122.41941568468144!3d37.774929779758235!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085809c5b5d5b7f%3A0x5b5b5b5b5b5b5b5b!2sSan%20Francisco%2C%20CA%2C%20USA!5e0!3m2!1sen!2sin!4v1605713899985!5m2!1sen!2sin"
               width="100%"
-              height="400"
+              height="100%"
               frameBorder="0"
               style={{ border: 0 }}
               allowFullScreen=""
@@ -105,9 +109,9 @@ const Contact = () => {
           <Box
             mt={4}
             p={4}
-            border={'1px solid #3182CE'}
-            // boxShadow={'0 0 10px 2px #3182CE'}
-            borderRadius={'lg'}
+            border="1px solid #3182CE"
+            borderRadius="lg"
+            // boxShadow="0 0 10px 2px #3182CE"
           >
             <Heading size="md">Contact Details</Heading>
             <Box mt={4}>
@@ -123,11 +127,11 @@ const Contact = () => {
               <p>contact@example.com</p>
             </Box>
           </Box>
-        </VStack>
-        <VStack h={'full'} w={'full'} justifyContent={'center'} spacing={'16'}>
+        </Box>
+        <Box flex="1">
           <form onSubmit={handleSubmit} style={{ width: '100%' }}>
-            <Box boxShadow={'0 0 10px 2px #3182CE'} p={'4'} borderRadius={'lg'}>
-              <Box>
+            <Box boxShadow="0 0 10px 2px #3182CE" p={4} borderRadius="lg">
+              <FormControl mb={4}>
                 <FormLabel htmlFor="name">Name</FormLabel>
                 <Input
                   required
@@ -138,8 +142,8 @@ const Contact = () => {
                   type="text"
                   focusBorderColor="blue.500"
                 />
-              </Box>
-              <Box my={'4'}>
+              </FormControl>
+              <FormControl mb={4}>
                 <FormLabel htmlFor="email">Email Address</FormLabel>
                 <Input
                   required
@@ -150,31 +154,29 @@ const Contact = () => {
                   type="email"
                   focusBorderColor="blue.500"
                 />
-              </Box>
-              <Box my={'4'}>
-                <FormControl mt={4}>
-                  <FormLabel>Phone Number</FormLabel>
-                  <HStack>
-                    <Select
-                      value={countryCode}
-                      onChange={e => setCountryCode(e.target.value)}
-                      width="25%"
-                    >
-                      <option value="+1">+1 </option>
-                      <option value="+44">+44 </option>
-                      <option value="+91">+91 </option>
-                      {/* Add more options as needed */}
-                    </Select>
-                    <Input
-                      type="tel"
-                      placeholder="Enter your phone number"
-                      value={phoneNumber}
-                      onChange={e => setPhoneNumber(e.target.value)}
-                    />
-                  </HStack>
-                </FormControl>
-              </Box>
-              <Box my={'4'}>
+              </FormControl>
+              <FormControl mb={4}>
+                <FormLabel htmlFor="phone">Phone Number</FormLabel>
+                <HStack>
+                  <Select
+                    value={countryCode}
+                    onChange={e => setCountryCode(e.target.value)}
+                    width="25%"
+                  >
+                    <option value="+1">+1 </option>
+                    <option value="+44">+44 </option>
+                    <option value="+91">+91 </option>
+                    {/* Add more options as needed */}
+                  </Select>
+                  <Input
+                    type="tel"
+                    placeholder="Enter your phone number"
+                    value={phoneNumber}
+                    onChange={e => setPhoneNumber(e.target.value)}
+                  />
+                </HStack>
+              </FormControl>
+              <FormControl mb={4}>
                 <FormLabel htmlFor="message">Message</FormLabel>
                 <Textarea
                   required
@@ -184,30 +186,30 @@ const Contact = () => {
                   placeholder="Enter Your Message.."
                   focusBorderColor="blue.500"
                 />
-              </Box>
+              </FormControl>
               {error && (
-                <Box my={'4'} color="red.500">
+                <Box my={4} color="red.500">
                   {error}
                 </Box>
               )}
               {success && (
-                <Box my={'4'} color="green.500">
+                <Box my={4} color="green.500">
                   Message sent successfully!
                 </Box>
               )}
               <Button
-                my={'4'}
-                w={'full'}
-                colorScheme={'blue'}
+                my={4}
+                w="full"
+                colorScheme="blue"
                 type="submit"
                 isLoading={loading}
               >
                 Send Message
               </Button>
-              <Box my={'4'}>
+              <Box my={4}>
                 Request for a course?{' '}
-                <Link to={'/request'}>
-                  <Button colorScheme={'blue'} variant={'link'}>
+                <Link to="/request">
+                  <Button colorScheme="blue" variant="link">
                     Click
                   </Button>{' '}
                   here
@@ -215,7 +217,7 @@ const Contact = () => {
               </Box>
             </Box>
           </form>
-        </VStack>
+        </Box>
       </HStack>
     </Container>
   );
