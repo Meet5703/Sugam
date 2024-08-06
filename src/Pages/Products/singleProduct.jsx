@@ -47,6 +47,11 @@ const SingleProduct = () => {
           `https://sugamexpress.onrender.com/api/v1/products/${id}`
         );
         setProduct(response.data);
+        console
+          .log
+          // response.data.photos.map(p => )
+          ();
+
         // Set the first photo as the selected image initially
         if (response.data.photos && response.data.photos.length > 0) {
           setSelectedImage(response.data.photos[0]);
@@ -128,7 +133,11 @@ const SingleProduct = () => {
               {product.photos.map((imageUrl, index) => (
                 <Image
                   key={index}
-                  src={`${BASE_URL}/public/photos/${imageUrl}`}
+                  src={`${BASE_URL}/public/photos/${imageUrl
+                    .split('\\')
+                    .pop()
+                    .split('/')
+                    .pop()}`}
                   alt={`Product Image ${index + 1}`}
                   boxSize="500px"
                   objectFit="cover"
@@ -142,7 +151,11 @@ const SingleProduct = () => {
               {product.photos.map((url, index) => (
                 <Image
                   key={index}
-                  src={`${BASE_URL}/public/photos/${url}`}
+                  src={`${BASE_URL}/public/photos/${url
+                    .split('\\')
+                    .pop()
+                    .split('/')
+                    .pop()}`}
                   alt={`Thumbnail ${index + 1}`}
                   boxSize="100px"
                   borderRadius="md"
