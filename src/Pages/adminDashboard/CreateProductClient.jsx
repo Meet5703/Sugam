@@ -41,7 +41,7 @@ const CreateProduct = () => {
 
     try {
       const response = await axios.post(
-        'http://localhost:5000/api/v1/products/create', // Ensure the URL is correct
+        'https://sugamexpress.onrender.com/api/v1/products/create', // Ensure the URL is correct
         formData,
         {
           headers: {

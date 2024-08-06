@@ -33,7 +33,7 @@ const InquiryList = () => {
   const fetchInquiries = async () => {
     setLoading(true);
     try {
-      let url = 'http://localhost:5000/api/v1/inquiry/getall';
+      let url = 'https://sugamexpress.onrender.com/api/v1/inquiry/getall';
       const params = [];
 
       if (productNameFilter) {

@@ -56,7 +56,7 @@ const ProductList = () => {
     setLoading(true);
     try {
       const response = await axios.get(
-        'http://localhost:5000/api/v1/products/getall'
+        'https://sugamexpress.onrender.com/api/v1/products/getall'
       );
       setProducts(response.data);
     } catch (error) {
@@ -69,7 +69,9 @@ const ProductList = () => {
 
   const deleteProduct = async id => {
     try {
-      await axios.delete(`http://localhost:5000/api/v1/products/${id}`);
+      await axios.delete(
+        `https://sugamexpress.onrender.com/api/v1/products/${id}`
+      );
       setProducts(products.filter(product => product._id !== id));
       alert('Product deleted successfully');
     } catch (error) {
@@ -121,7 +123,7 @@ const ProductList = () => {
 
     try {
       await axios.put(
-        `http://localhost:5000/api/v1/products/${currentProduct._id}`,
+        `https://sugamexpress.onrender.com/api/v1/products/${currentProduct._id}`,
         updatedProduct
       );
       fetchProducts(); // Refresh products after update
@@ -193,7 +195,7 @@ const ProductList = () => {
 
     try {
       const response = await axios.get(
-        'http://localhost:5000/api/v1/products/getall'
+        'https://sugamexpress.onrender.com/api/v1/products/getall'
       );
       const allProducts = response.data;
 

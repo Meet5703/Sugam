@@ -478,7 +478,7 @@ const ProductCarousel = ({ onInquireNow }) => {
     const fetchLatestProducts = async () => {
       try {
         const response = await axios.get(
-          'http://localhost:5000/api/v1/products/latest'
+          'https://sugamexpress.onrender.com/api/v1/products/latest'
         );
         console.log('Latest Products Response:', response.data);
         console.log(
@@ -619,7 +619,7 @@ const ProductCarousel = ({ onInquireNow }) => {
                   transition="all 0.3s ease"
                 >
                   <Box
-                    backgroundImage={`url(${`http://localhost:5000/public/photos/${product.photo
+                    backgroundImage={`url(${`https://sugamexpress.onrender.com/public/photos/${product.photo
                       .split('\\')
                       .pop()
                       .split('/')
@@ -678,7 +678,7 @@ const ExclusiveCarousel = ({ onInquireNow }) => {
     const fetchExclusiveProducts = async () => {
       try {
         const response = await axios.get(
-          'http://localhost:5000/api/v1/products/exclusive'
+          'https://sugamexpress.onrender.com/api/v1/products/exclusive'
         );
         console.log('Exclusive Products Response:', response.data);
         setExclusiveProducts(response.data.data); // Set data array from response
@@ -813,7 +813,7 @@ const ExclusiveCarousel = ({ onInquireNow }) => {
                   transition="all 0.3s ease"
                 >
                   <Box
-                    backgroundImage={`url(${`http://localhost:5000/public/photos/${product.photo
+                    backgroundImage={`url(${`https://sugamexpress.onrender.com/public/photos/${product.photo
                       .split('\\')
                       .pop()
                       .split('/')
