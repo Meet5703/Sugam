@@ -38,7 +38,7 @@ const FeaturedCarousel = () => {
     const fetchFeaturedProducts = async () => {
       try {
         const response = await axios.get(
-          'https://sugamexpress.onrender.com/api/v1/products/featured'
+          'http://localhost:5000/api/v1/products/featured'
         );
         setFeaturedProducts(response.data.data);
         setLoading(false);
@@ -168,7 +168,7 @@ const FeaturedCarousel = () => {
                   >
                     <Link to={`/products/${product._id}`}>
                       <Image
-                        src={`https://sugamexpress.onrender.com/public/photos/${product.photo
+                        src={`http://localhost:5000/public/photos/${product.photo
                           .split('\\')
                           .pop()
                           .split('/')
